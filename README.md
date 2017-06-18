@@ -25,12 +25,13 @@ you can check docs and samples here [react-suite-samples](https://github.com/jer
     
 ## TODO 
 
-- tests
-- more samples
-- spell check # sorry is too late for use google translate
-- add extractor for translations
-- themes
-- i need money :(
+- [ ] tests
+- [ ] more samples
+- [ ] more components and modules
+- [ ] spell check # sorry is too late for use google translate
+- [ ] add extractor for translations
+- [ ] themes
+- [ ] i need money :(
 
 
 ## links
