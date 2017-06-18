@@ -38,3 +38,23 @@ you can check docs and samples here [react-suite-samples](https://github.com/jer
 
 - [react-suite-samples](https://github.com/jerson/react-suite-samples)
 - [react-suite-boilerplate](https://github.com/jerson/react-suite-boilerplate)
+
+
+## thanks to
+
+- react
+- react-dom
+- react-native
+- react-native-web
+- pouchdb-browser
+- react-native-blur
+- react-native-device-info
+- react-native-drawer
+- react-native-google-analytics
+- react-native-linear-gradient
+- react-native-orientation
+- react-native-shared-preferences
+- react-native-vector-icons
+- react-router-dom
+- react-router-native
+- realm
