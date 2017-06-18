@@ -23,6 +23,16 @@ you can check docs and samples here [react-suite-samples](https://github.com/jer
     yarn add react-suite
     
     
+## TODO 
+
+- tests
+- more samples
+- spell check # sorry is too late for use google translate
+- add extractor for translations
+- themes
+- i need money :(
+
+
 ## links
 
 - [react-suite-samples](https://github.com/jerson/react-suite-samples)
