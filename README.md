@@ -1,5 +1,7 @@
 # react-suite
 
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/gpardogamez)
+
 react-suite, is a collection of components and modules build on top react-native 
 and react-native-web made with typescript for build apps for Android, 
 IOS and Web with the same code.
