@@ -27,7 +27,7 @@ you can check docs and samples here [react-suite-samples](https://github.com/jer
     
 ## TODO 
 
-- [ ] logo
+- [x] logo , #if you are a designer please help me
 - [ ] tests
 - [ ] more samples
 - [ ] more components and modules
