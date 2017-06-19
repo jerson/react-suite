@@ -6,29 +6,23 @@ import {
 } from 'react-native';
 import View from './View';
 
-export interface ActivityIndicatorProps {
+export interface LoadingProps {
   style?: ViewStyle;
-  inverted?: boolean;
+  //inverted?: boolean;
+  color?: string;
   size: 'small' | 'large' | number;
 }
 
 export interface State {}
 
-export default class Loading extends React.Component<
-  ActivityIndicatorProps,
-  State
-> {
+export default class Loading extends React.Component<LoadingProps, State> {
   render() {
-    let { style, inverted, ...props } = this.props;
-
-    let color = '#444';
-    if (inverted) {
-      color = '#fff';
-    }
+    let { style, color, ...props } = this.props;
+    color = color || '#444';
 
     return (
-      <View style={[styles.container, style]}>
-        <ActivityIndicatorBase color={color} {...props} />
+      <View style={[styles.container]}>
+        <ActivityIndicatorBase color={color} style={[style]} {...props} />
       </View>
     );
   }
