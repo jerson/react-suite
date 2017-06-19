@@ -1,4 +1,3 @@
-# react-suite
 
 
 ![default view](https://github.com/jerson/react-suite/raw/master/docs/logo.png)
@@ -10,11 +9,9 @@ and react-native-web made with typescript for build apps for Android,
 IOS and Web with the same code.
 
 
-![default view](https://github.com/jerson/react-suite-samples/raw/master/docs/web02.png)
 ![default view](https://github.com/jerson/react-suite-samples/raw/master/docs/android02.png)
 ![default view](https://github.com/jerson/react-suite-samples/raw/master/docs/ios02.png)
-![default view](https://github.com/jerson/react-suite-samples/raw/master/docs/ios03.png)
-
+![default view](https://github.com/jerson/react-suite-samples/raw/master/docs/web02.png)
 
 
 
