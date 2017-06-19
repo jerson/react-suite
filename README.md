@@ -1,14 +1,20 @@
 # react-suite
 
+
+![default view](https://github.com/jerson/react-suite/raw/master/docs/logo.png)
+
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/gpardogamez)
 
 react-suite, is a collection of components and modules build on top react-native 
 and react-native-web made with typescript for build apps for Android, 
 IOS and Web with the same code.
 
-![default view](https://github.com/jerson/react-suite/raw/master/docs/sample.png)
-![default view](https://github.com/jerson/react-suite/raw/master/docs/sample1.png)
-![default view](https://github.com/jerson/react-suite/raw/master/docs/sample2.png)
+
+![default view](https://github.com/jerson/react-suite-samples/raw/master/docs/web02.png)
+![default view](https://github.com/jerson/react-suite-samples/raw/master/docs/android02.png)
+![default view](https://github.com/jerson/react-suite-samples/raw/master/docs/ios02.png)
+![default view](https://github.com/jerson/react-suite-samples/raw/master/docs/ios03.png)
+
 
 
 
