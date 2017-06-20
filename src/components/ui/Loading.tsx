@@ -5,6 +5,7 @@ import {
   ViewStyle
 } from 'react-native';
 import View from './View';
+import Theme from '../../modules/theme/Theme';
 
 export interface LoadingProps {
   style?: ViewStyle;
@@ -18,7 +19,7 @@ export interface State {}
 export default class Loading extends React.Component<LoadingProps, State> {
   render() {
     let { style, color, ...props } = this.props;
-    color = color || '#444';
+    color = color || Theme.vars.loadingColor;
 
     return (
       <View style={[styles.container]}>

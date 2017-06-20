@@ -2,6 +2,7 @@ const PubSub = require('pubsub-js');
 
 export type Name =
   | 'onLocaleChange'
+  | 'onThemeChange'
   | 'onLocationChange'
   | 'onDimensionsChange'
   | 'onOrientationChange'
