@@ -5,12 +5,12 @@ import Loading from './Loading';
 import Icon from './Icon';
 import Touchable, { TouchableProps } from './Touchable';
 import View from './View';
+import Theme from '../../modules/theme/Theme';
 
 export interface ButtonProps extends TouchableProps {
   title?: string;
   isLoading?: boolean;
   icon?: string;
-  iconSize?: number;
   style?: ViewStyle;
   iconStyle?: TextStyle;
   textStyle?: TextStyle;
@@ -74,31 +74,31 @@ export default class Button extends React.Component<ButtonProps, State> {
     switch (type) {
       case 'default':
       default:
-        typeIconColor = '#999';
+        typeIconColor = Theme.vars.buttonDefaultIconColor;
         break;
       case 'primary':
         typeContainerStyle = styles.containerPrimary;
-        typeIconColor = '#fff';
+        typeIconColor = Theme.vars.buttonPrimaryIconColor;
         typeTitleStyle = styles.titlePrimary;
         break;
       case 'danger':
         typeContainerStyle = styles.containerDanger;
-        typeIconColor = '#fff';
+        typeIconColor = Theme.vars.buttonDangerIconColor;
         typeTitleStyle = styles.titleDanger;
         break;
       case 'warning':
         typeContainerStyle = styles.containerWarning;
-        typeIconColor = '#fff';
+        typeIconColor = Theme.vars.buttonWarningIconColor;
         typeTitleStyle = styles.titleWarning;
         break;
       case 'info':
         typeContainerStyle = styles.containerInfo;
-        typeIconColor = '#fff';
+        typeIconColor = Theme.vars.buttonInfoIconColor;
         typeTitleStyle = styles.titleInfo;
         break;
       case 'success':
         typeContainerStyle = styles.containerSuccess;
-        typeIconColor = '#fff';
+        typeIconColor = Theme.vars.buttonSuccessIconColor;
         typeTitleStyle = styles.titleSuccess;
         break;
     }
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   } as ViewStyle,
   container: {
-    backgroundColor: '#efefef',
+    backgroundColor: Theme.vars.buttonDefaultBackgroundColor,
     borderRadius: 4,
     margin: 2,
     alignItems: 'center',
@@ -177,50 +177,50 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 10,
     elevation: 1,
-    shadowColor: '#d4d4d4',
+    shadowColor: Theme.vars.buttonDefaultShadowColor,
     shadowOffset: { height: 1, width: 0 },
     shadowOpacity: 0.2,
     shadowRadius: 4
   } as ViewStyle,
   containerPrimary: {
-    backgroundColor: '#1b6ce8',
-    shadowColor: '#1964d6'
+    backgroundColor: Theme.vars.buttonPrimaryBackgroundColor,
+    shadowColor: Theme.vars.buttonPrimaryShadowColor
   } as ViewStyle,
   containerDanger: {
-    backgroundColor: '#e83f19',
-    shadowColor: '#cf3816'
+    backgroundColor: Theme.vars.buttonDangerBackgroundColor,
+    shadowColor: Theme.vars.buttonDangerShadowColor
   } as ViewStyle,
   containerWarning: {
-    backgroundColor: '#e86744',
-    shadowColor: '#d25d3d'
+    backgroundColor: Theme.vars.buttonWarningBackgroundColor,
+    shadowColor: Theme.vars.buttonWarningShadowColor
   } as ViewStyle,
   containerInfo: {
-    backgroundColor: '#25aeec',
-    shadowColor: '#22a1da'
+    backgroundColor: Theme.vars.buttonInfoBackgroundColor,
+    shadowColor: Theme.vars.buttonInfoShadowColor
   } as ViewStyle,
   containerSuccess: {
-    backgroundColor: '#9ee853',
-    shadowColor: '#8fd24b'
+    backgroundColor: Theme.vars.buttonSuccessBackgroundColor,
+    shadowColor: Theme.vars.buttonSuccessShadowColor
   } as ViewStyle,
   title: {
-    color: '#444',
+    color: Theme.vars.buttonDefaultTextColor,
     // fontWeight: '500',
     fontSize: 13
   } as TextStyle,
   titlePrimary: {
-    color: '#fff'
+    color: Theme.vars.buttonPrimaryTextColor
   } as TextStyle,
   titleDanger: {
-    color: '#fff'
+    color: Theme.vars.buttonDangerTextColor
   } as TextStyle,
   titleWarning: {
-    color: '#fff'
+    color: Theme.vars.buttonSuccessTextColor
   } as TextStyle,
   titleInfo: {
-    color: '#fff'
+    color: Theme.vars.buttonSuccessTextColor
   } as TextStyle,
   titleSuccess: {
-    color: '#fff'
+    color: Theme.vars.buttonSuccessTextColor
   } as TextStyle,
   iconBefore: {
     marginRight: 6

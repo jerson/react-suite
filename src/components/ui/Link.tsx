@@ -1,25 +1,21 @@
 import * as React from 'react';
-import {
-  StyleSheet,
-  TextStyle,
-  TouchableOpacity,
-  TouchableOpacityProperties,
-  ViewStyle
-} from 'react-native';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import Text from './Text';
 import Loading from './Loading';
 import Icon from './Icon';
 import Touchable, { TouchableProps } from './Touchable';
 import View from './View';
+import Theme from '../../modules/theme/Theme';
 
 export interface LinkProps extends TouchableProps {
   title?: string;
   isLoading?: boolean;
   icon?: string;
-  iconSize?: number;
   style?: ViewStyle;
   iconStyle?: TextStyle;
   textStyle?: TextStyle;
+  iconPosition?: 'before' | 'after';
+  size?: 'default' | 'small' | 'medium' | 'large';
   onPress?: () => void;
 }
 
@@ -29,29 +25,82 @@ export default class Link extends React.Component<LinkProps, State> {
   render() {
     let {
       children,
+      iconPosition,
       iconStyle,
       icon,
-      iconSize,
+      size,
       style,
       isLoading,
       textStyle,
       title,
       ...props
     } = this.props;
-    let finalIconSize = iconSize || 20;
+
+    iconPosition = iconPosition || 'before';
+
+    let sizeIcon = 0;
+    let sizeTitle = 0;
+
+    switch (size) {
+      case 'default':
+      default:
+        sizeIcon = 15;
+        sizeTitle = 13;
+        break;
+      case 'small':
+        sizeIcon = 13;
+        sizeTitle = 11;
+        break;
+      case 'medium':
+        sizeIcon = 18;
+        sizeTitle = 16;
+        break;
+      case 'large':
+        sizeIcon = 22;
+        sizeTitle = 20;
+        break;
+    }
+
+    let iconColor = Theme.vars.linkIconColor;
+
     return (
       <Touchable style={[style]} {...props}>
         <View style={styles.content}>
-          {isLoading &&
-            <Loading style={styles.icon} inverted size={finalIconSize} />}
-          {icon &&
+          {iconPosition === 'before' &&
+            isLoading &&
+            <Loading
+              style={styles.iconBefore}
+              color={iconColor}
+              size={sizeIcon}
+            />}
+          {iconPosition === 'before' &&
+            icon &&
             !isLoading &&
             <Icon
-              style={[styles.icon, iconStyle]}
+              style={[styles.iconBefore, { color: iconColor }, iconStyle]}
               name={icon}
-              size={finalIconSize}
+              size={sizeIcon}
             />}
-          {title && <Text style={[styles.title, textStyle]}>{title}</Text>}
+          {title &&
+            <Text style={[styles.title, { fontSize: sizeTitle }, textStyle]}>
+              {title}
+            </Text>}
+
+          {iconPosition === 'after' &&
+            isLoading &&
+            <Loading
+              style={styles.iconAfter}
+              color={iconColor}
+              size={sizeIcon}
+            />}
+          {iconPosition === 'after' &&
+            icon &&
+            !isLoading &&
+            <Icon
+              style={[styles.iconAfter, { color: iconColor }, iconStyle]}
+              name={icon}
+              size={sizeIcon}
+            />}
         </View>
       </Touchable>
     );
@@ -65,11 +114,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   } as ViewStyle,
   title: {
-    color: '#444',
+    color: Theme.vars.linkTextColor,
     fontWeight: '500',
     fontSize: 13
   } as TextStyle,
-  icon: {
+  iconBefore: {
     marginRight: 6
+  } as ViewStyle,
+  iconAfter: {
+    marginLeft: 6
   } as ViewStyle
 });
