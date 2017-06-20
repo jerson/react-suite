@@ -82,7 +82,23 @@ export default class ThemeBuilder {
         .toHexString(),
 
       linkTextColor: defaults.primaryColor,
-      linkIconColor: defaults.primaryColor
+      linkIconColor: defaults.primaryColor,
+
+      inputPlaceholderColor: defaults.textSecondaryColor,
+      inputLabelColor: defaults.textSecondaryColor,
+      inputBorderColor: defaults.borderColor,
+      inputBackgroundColor: TinyColor(defaults.backgroundColor)
+        .darken(2)
+        .toHexString(),
+      inputTextColor: defaults.textColor,
+
+      inputErrorPlaceholderColor: defaults.dangerColor,
+      inputErrorLabelColor: defaults.dangerColor,
+      inputErrorBorderColor: defaults.dangerColor,
+      inputErrorBackgroundColor: TinyColor(defaults.backgroundColor)
+        .darken(2)
+        .toHexString(),
+      inputErrorTextColor: defaults.dangerColor
     };
   }
 }

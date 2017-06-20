@@ -8,11 +8,13 @@ import {
 } from 'react-native';
 import Text from './Text';
 import View from './View';
+import Theme from '../../modules/theme/Theme';
 
 export interface InputProps extends TextInputProperties {
   value?: string;
   placeholder?: string;
   defaultValue?: string;
+  hasError?: boolean;
   style?: ViewStyle;
   containerStyle?: ViewStyle;
   onChangeText?: (text: string) => void;
@@ -62,6 +64,7 @@ export default class Input extends React.Component<InputProps, State> {
     let {
       value,
       defaultValue,
+      hasError,
       containerStyle,
       style,
       useLabel,
@@ -78,12 +81,25 @@ export default class Input extends React.Component<InputProps, State> {
 
     return (
       <View style={[styles.container]}>
-        {useLabel && <Text style={styles.label}>{placeholder}</Text>}
-        <View style={[styles.inputContainer, containerStyle]}>
+        {useLabel &&
+          <Text style={[styles.label, hasError && styles.labelError]}>
+            {placeholder}
+          </Text>}
+        <View
+          style={[
+            styles.inputContainer,
+            hasError && styles.inputContainerError,
+            containerStyle
+          ]}
+        >
           <TextInput
             underlineColorAndroid='transparent'
-            placeholderTextColor={'#444'}
-            style={[styles.input, style]}
+            placeholderTextColor={
+              hasError
+                ? Theme.vars.inputErrorPlaceholderColor
+                : Theme.vars.inputPlaceholderColor
+            }
+            style={[styles.input, hasError && styles.inputError, style]}
             ref='input'
             {...newProps}
           />
@@ -100,25 +116,36 @@ const styles = StyleSheet.create({
     paddingBottom: 10
   } as ViewStyle,
   label: {
-    color: '#999',
+    color: Theme.vars.inputLabelColor,
     textAlign: 'center',
     padding: 4
   } as TextStyle,
+  labelError: {
+    color: Theme.vars.inputErrorLabelColor
+  } as TextStyle,
   inputContainer: {
-    borderColor: '#f4f4f4',
-    backgroundColor: '#f4f4f4',
-    borderRadius: 4,
+    //padding: 1,
+    backgroundColor: Theme.vars.inputBackgroundColor,
+    borderColor: Theme.vars.inputBorderColor,
     borderWidth: 1,
-    padding: 1
+    borderRadius: 4
+  } as ViewStyle,
+  inputContainerError: {
+    backgroundColor: Theme.vars.inputErrorBackgroundColor,
+    borderColor: Theme.vars.inputErrorBorderColor
   } as ViewStyle,
   input: {
     height: 35,
-    backgroundColor: '#f9f9f9',
-    color: '#444',
+    backgroundColor: Theme.vars.inputBackgroundColor,
+    color: Theme.vars.inputTextColor,
     borderRadius: 4,
     fontSize: 13,
     padding: 4,
     paddingLeft: 10,
     paddingRight: 10
-  } as TextStyle
+  } as TextStyle,
+  inputError: {
+    backgroundColor: Theme.vars.inputErrorBackgroundColor,
+    color: Theme.vars.inputErrorTextColor
+  } as ViewStyle
 });

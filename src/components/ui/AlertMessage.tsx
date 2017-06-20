@@ -5,7 +5,11 @@ import Text from './Text';
 
 export interface AlertMessageProps {
   message: string;
+  icon?: string;
   style?: ViewStyle;
+  iconStyle?: TextStyle;
+  textStyle?: TextStyle;
+  type?: 'default' | 'primary' | 'danger' | 'warning' | 'info' | 'success';
 }
 
 export interface State {}
@@ -15,7 +19,7 @@ export default class AlertMessage extends React.Component<
   State
 > {
   render() {
-    let { message, style } = this.props;
+    let { message, icon, iconStyle, textStyle, type, style } = this.props;
 
     return (
       <View style={[styles.container, style]}>

@@ -20,8 +20,8 @@ let defaults: ThemeDefaultVars = {
   textActiveColor: '#fff',
   textActiveSecondaryColor: '#f4f4f4',
 
-  backgroundColor: '#222',
-  backgroundSecondaryColor: '#555',
+  backgroundColor: '#fff',
+  backgroundSecondaryColor: '#f4f4f4',
 
   borderColor: '#d4d4d4',
   borderSecondaryColor: '#e9e9e9'
