@@ -36,7 +36,7 @@ export default class AlertMessage extends React.Component<AlertMessageProps,
     }
 
     render() {
-        let {message,isLoading, icon, allowClose, iconStyle, textStyle, title, titleStyle, type, style} = this.props;
+        let {message, isLoading, icon, allowClose, iconStyle, textStyle, title, titleStyle, type, style} = this.props;
         let {isVisible} = this.state;
 
         if (!isVisible) {
