@@ -5,20 +5,20 @@ let defaults: ThemeDefaultVars = {
   darkMode: false,
 
   defaultColor: '#efefef',
-  primaryColor: '#1b6ce8',
-  dangerColor: '#e83f19',
-  warningColor: '#e86744',
-  infoColor: '#25aeec',
-  successColor: '#9ee853',
+  primaryColor: '#7367F0',
+  dangerColor: '#EA5455',
+  warningColor: '#F8D800',
+  infoColor: '#0396FF',
+  successColor: '#28C76F',
 
   textShadowColor: '#000',
   shadowColor: '#000',
 
-  textColor: '#444',
+  textColor: '#525252',
   textSecondaryColor: '#999',
 
   textActiveColor: '#fff',
-  textActiveSecondaryColor: '#f4f4f4',
+  textActiveSecondaryColor: 'rgba(255,255,255,0.7)',
 
   backgroundColor: '#fff',
   backgroundSecondaryColor: '#f4f4f4',
