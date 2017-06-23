@@ -21,7 +21,9 @@ let defaults: ThemeDefaultVars = {
   textActiveSecondaryColor: 'rgba(255,255,255,0.7)',
 
   backgroundColor: '#fff',
-  backgroundSecondaryColor: '#f4f4f4',
+  backgroundSecondaryColor: 'rgb(248, 248, 255)',
+
+  backgroundDarkenColor: '#000',
 
   borderColor: '#d4d4d4',
   borderSecondaryColor: '#e9e9e9'

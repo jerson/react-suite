@@ -44,7 +44,5 @@ export default class ListView extends React.Component<ListViewProps, State> {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    //backgroundColor: '#fff',
-  } as ViewStyle
+  container: {} as ViewStyle
 });

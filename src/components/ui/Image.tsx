@@ -21,7 +21,5 @@ export default class Image extends React.Component<ImageProps, State> {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    //backgroundColor: '#fff',
-  } as ImageStyle
+  container: {} as ImageStyle
 });

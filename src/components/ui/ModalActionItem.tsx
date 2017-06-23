@@ -16,6 +16,7 @@ import Button from './Button';
 import { _ } from '../../modules/i18n/Translator';
 import ScrollView from './ScrollView';
 import OptionItem, { OptionItemProps } from './OptionItem';
+import Theme from '../../modules/theme/Theme';
 import CompositeAnimation = Animated.CompositeAnimation;
 import EndCallback = Animated.EndCallback;
 
@@ -208,7 +209,7 @@ const styles = StyleSheet.create({
     bottom: 0
   } as ViewStyle,
   backdrop: {
-    backgroundColor: 'rgba(0,0,0,0.25)',
+    backgroundColor: Theme.vars.modalActionItemBackgroundColor,
     zIndex: 9,
     //flex: 1,
     //position: Platform.OS === 'web' ? 'fixed' : 'absolute',
@@ -223,20 +224,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 10,
     borderTopWidth: 1,
-    borderTopColor: '#f4f4f4'
-  } as ViewStyle,
-  background: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    backgroundColor: '#000'
+    borderTopColor: Theme.vars.modalActionItemBorderColor
   } as ViewStyle,
   title: {
     fontSize: 12,
     textAlign: 'center',
-    color: '#444',
+    color: Theme.vars.modalActionItemTextColor,
     margin: 10,
     fontWeight: '500'
   } as TextStyle,
@@ -252,7 +245,7 @@ const styles = StyleSheet.create({
     padding: 5
   } as TextStyle,
   content: {
-    backgroundColor: '#F9F9F9',
+    backgroundColor: Theme.vars.modalActionItemContentBackgroundColor,
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4
   } as ViewStyle

@@ -2,6 +2,7 @@ import PreferencesStorage from '../storage/PreferencesStorage';
 import Emitter from '../listener/Emitter';
 import Log from '../logger/Log';
 import Default from './themes/Default';
+import Darker from './themes/Darker';
 
 export interface UserSettings {
   themes: Themes;
@@ -23,11 +24,11 @@ export interface Themes {
 
 export default class Theme {
   public static settings: Settings = {
-    themes: { Default },
+    themes: { Default, Darker },
     defaultTheme: 'Default'
   };
   static theme: string = Theme.getDefaultTheme();
-  static vars: AppTheme = Default;
+  static vars: AppTheme = Darker;
 
   static async init(settings: UserSettings) {
     if (settings) {

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, Text as TextBase, TextStyle } from 'react-native';
 import { TextProps } from './Text';
+import Theme from '../../modules/theme/Theme';
 
 export interface TitleProps extends TextProps {
   style?: TextStyle;
@@ -44,7 +45,7 @@ export default class Title extends React.Component<TitleProps, State> {
 const styles = StyleSheet.create({
   center: { textAlign: 'center' },
   container: {
-    color: '#444',
+    color: Theme.vars.titleColor,
     //fontFamily: 'Roboto,Helvetica,Arial',
     fontSize: 14,
     paddingTop: 4,

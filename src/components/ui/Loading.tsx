@@ -30,7 +30,5 @@ export default class Loading extends React.Component<LoadingProps, State> {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    //backgroundColor: '#fff',
-  } as ViewStyle
+  container: {} as ViewStyle
 });

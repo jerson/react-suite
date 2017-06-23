@@ -4,6 +4,7 @@ import View from './View';
 import Icon from './Icon';
 import Text from './Text';
 import { _ } from '../../modules/i18n/Translator';
+import Theme from '../../modules/theme/Theme';
 
 export interface DrawerFooterProps extends ViewStyle {
   children?: JSX.Element;
@@ -46,7 +47,7 @@ export default class DrawerFooter extends React.Component<
 const styles = StyleSheet.create({
   container: {
     borderTopWidth: 1,
-    borderTopColor: '#f9f9f9',
+    borderTopColor: Theme.vars.drawerFooterBorderColor,
     padding: 12,
     paddingLeft: 10,
     paddingRight: 10,
@@ -61,10 +62,10 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     marginLeft: 15,
     fontSize: 12,
-    color: '#888'
+    color: Theme.vars.drawerFooterTextColor
   } as TextStyle,
   icon: {
     marginLeft: 5,
-    color: '#999'
+    color: Theme.vars.drawerFooterIconColor
   } as TextStyle
 });

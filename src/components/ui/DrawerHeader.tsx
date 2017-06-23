@@ -3,6 +3,7 @@ import { ImageURISource, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import View from './View';
 import Text from './Text';
 import Image from './Image';
+import Theme from '../../modules/theme/Theme';
 
 export interface DrawerHeaderProps extends ViewStyle {
   children?: JSX.Element | JSX.Element[];
@@ -47,8 +48,7 @@ export default class DrawerHeader extends React.Component<
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f4f4f4',
-    //height: 100,
+    backgroundColor: Theme.vars.drawerHeaderBackgroundColor,
     justifyContent: 'center',
     padding: 13,
     paddingLeft: 10,
@@ -64,6 +64,6 @@ const styles = StyleSheet.create({
   label: {
     margin: 10,
     fontSize: 18,
-    color: '#444'
+    color: Theme.vars.drawerHeaderTextColor
   } as TextStyle
 });

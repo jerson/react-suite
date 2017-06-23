@@ -2,6 +2,7 @@ import View from './View';
 import * as React from 'react';
 import { Image, ImageStyle, StyleSheet, ViewStyle } from 'react-native';
 import { ImageProps } from './Image';
+import Theme from '../../modules/theme/Theme';
 
 export interface BlurImageProps extends ImageProps {
   style?: ImageStyle;
@@ -25,7 +26,7 @@ export default class BlurImage extends React.Component<BlurImageProps, State> {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#222',
+    backgroundColor: Theme.vars.blurImageBackgroundColor,
     overflow: 'hidden'
   } as ViewStyle,
   image: {

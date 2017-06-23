@@ -5,6 +5,7 @@ import Text from './Text';
 import HeaderAction, { HeaderActionProps } from './HeaderAction';
 import StatusBarView from './StatusBarView';
 import HeaderDrawerAction from './HeaderDrawerAction';
+import Theme from '../../modules/theme/Theme';
 
 const PropTypes = require('prop-types');
 
@@ -35,7 +36,9 @@ export default class Header extends React.Component<HeaderProps, State> {
     let maxWidthFinal = maxWidth || 900;
     let statusBarBackgroundColorFinal =
       statusBarBackgroundColor ||
-      (Platform.OS === 'android' ? '#000' : 'rgba(76,84,128,0.1)');
+      (Platform.OS === 'android'
+        ? Theme.vars.statusBarViewBackgroundAndroidColor
+        : Theme.vars.statusBarViewBackgroundIOSColor);
     let statusBarStyleFinal =
       statusBarStyle || (Platform.OS === 'android' ? 'default' : 'default');
     return (
@@ -98,7 +101,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15
   } as ViewStyle,
   icon: {
-    color: '#666'
+    color: Theme.vars.headerIconColor
   } as TextStyle,
   options: {
     flexDirection: 'row'
@@ -113,7 +116,7 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   title: {
     fontSize: 16,
-    color: '#444'
+    color: Theme.vars.headerTextColor
   } as TextStyle,
   center: {
     alignItems: 'flex-start',
@@ -121,17 +124,14 @@ const styles = StyleSheet.create({
     flex: 1
   } as ViewStyle,
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: Theme.vars.headerBackgroundColor,
     //position: Platform.OS === 'web' ? 'fixed' : 'absolute',
     // position: 'absolute',
-    /*left: 0,
-                right: 0,
-                top: 0,*/
     zIndex: 1,
     flexDirection: 'column',
 
     elevation: 4,
-    shadowColor: '#000',
+    shadowColor: Theme.vars.headerShadowColor,
     shadowOpacity: 0.1,
     shadowRadius: 2,
     shadowOffset: {

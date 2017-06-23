@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, ViewStyle } from 'react-native';
 import SliderBase from 'react-native-slider';
+import Theme from 'modules/theme/Theme';
 
 export interface ProgressBarProps {
   trackStyle?: ViewStyle;
@@ -39,7 +40,7 @@ export default class ProgressBar extends React.Component<
         trackStyle={[styles.track, trackStyle]}
         thumbStyle={[styles.thumb]}
         disabled={true}
-        minimumTrackTintColor={'blue'}
+        minimumTrackTintColor={Theme.vars.progressBarActiveColor}
         minimumValue={minimumValueFinal}
         maximumValue={maximumValueFinal}
         {...props}
@@ -49,16 +50,8 @@ export default class ProgressBar extends React.Component<
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 2
-    // backgroundColor:'red'
-  } as ViewStyle,
-  track: {
-    height: 4,
-    borderRadius: 0,
-    marginTop: -4,
-    backgroundColor: '#999'
-  } as ViewStyle,
+  container: {} as ViewStyle,
+  track: {} as ViewStyle,
   thumb: {
     width: 1,
     height: 1,

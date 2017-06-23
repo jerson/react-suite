@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { BlurView } from 'react-native-blur';
 import { ImageProps } from './Image';
+import Theme from '../../modules/theme/Theme';
 
 export interface BlurImageProps extends ImageProps {
   style?: ImageStyle;
@@ -55,7 +56,7 @@ export default class BlurImageAndroid extends React.Component<
           <BlurView
             blurRadius={2}
             downsampleFactor={10}
-            overlayColor={'rgba(0, 0, 0, 0.85)'}
+            overlayColor={Theme.vars.blurImageOverlayBackgroundColor}
             style={styles.blurView}
             viewRef={viewRef}
           />}
@@ -69,8 +70,6 @@ export default class BlurImageAndroid extends React.Component<
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // justifyContent: 'center',
     backgroundColor: 'transparent'
   } as ImageStyle,
   blurView: {

@@ -5,6 +5,7 @@ import {
   TextProperties,
   TextStyle
 } from 'react-native';
+import Theme from '../../modules/theme/Theme';
 
 export interface TextProps extends TextProperties {
   style?: TextStyle;
@@ -22,7 +23,7 @@ export default class Text extends React.Component<TextProps, State> {
 
 const styles = StyleSheet.create({
   container: {
-    color: '#222',
+    color: Theme.vars.textColor,
     // fontFamily: 'Heebo',
     fontSize: 14
   } as TextStyle

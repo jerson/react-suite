@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, ViewStyle } from 'react-native';
 import SliderBase from 'react-native-slider';
+import Theme from '../../modules/theme/Theme';
 
 export interface SliderProps {
   trackStyle?: ViewStyle;
@@ -35,7 +36,7 @@ export default class Slider extends React.Component<SliderProps, State> {
         style={[styles.container, style]}
         trackStyle={[styles.track, trackStyle]}
         thumbStyle={[styles.thumb]}
-        minimumTrackTintColor={'blue'}
+        minimumTrackTintColor={Theme.vars.sliderActiveColor}
         minimumValue={minimumValueFinal}
         maximumValue={maximumValueFinal}
         {...props}
@@ -47,21 +48,9 @@ export default class Slider extends React.Component<SliderProps, State> {
 const styles = StyleSheet.create({
   container: {
     marginTop: 2
-    // backgroundColor:'red'
   } as ViewStyle,
-  track: {
-    height: 4,
-    borderRadius: 0,
-    marginTop: -4,
-    backgroundColor: '#999'
-  } as ViewStyle,
+  track: {} as ViewStyle,
   thumb: {
-    width: 16,
-    height: 16,
-    borderRadius: 16 / 2,
-    backgroundColor: '#f4f4f4',
-    borderColor: '#d4d4d4',
-    borderWidth: 2
-    // opacity:0,
+    backgroundColor: Theme.vars.sliderThumbColor
   } as ViewStyle
 });

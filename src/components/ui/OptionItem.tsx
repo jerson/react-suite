@@ -6,6 +6,7 @@ import View from './View';
 import { ButtonProps } from './Button';
 import Image from './Image';
 import Text from './Text';
+import Theme from '../../modules/theme/Theme';
 
 export interface OptionItemProps extends ButtonProps {
   title: string;
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     paddingTop: 2,
     paddingBottom: 2,
     borderTopWidth: 0.5,
-    borderTopColor: '#f4f4f4'
+    borderTopColor: Theme.vars.optionItemBorderColor
   } as ViewStyle,
   container: {
     flexDirection: 'row',
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   icon: {
     marginLeft: 10,
-    color: '#d4d4d4'
+    color: Theme.vars.optionItemIconColor
   } as ViewStyle,
   image: {
     marginLeft: 10,
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
   title: {
     marginLeft: 10,
     fontSize: 14,
-    color: '#444',
+    color: Theme.vars.optionItemTextColor,
     fontWeight: '400'
   } as TextStyle,
   button: {

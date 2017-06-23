@@ -7,6 +7,7 @@ import {
   Platform
 } from 'react-native';
 import View from './View';
+import Theme from '../../modules/theme/Theme';
 
 export interface StatusBarViewProps extends StatusBarProperties {
   backgroundColor?: string;
@@ -22,7 +23,8 @@ export default class StatusBarViewIOS extends React.Component<
   render() {
     let { backgroundColor, barStyle, ...props } = this.props;
 
-    let backgroundColorFinal = backgroundColor || 'rgba(76,84,128,0.1)';
+    let backgroundColorFinal =
+      backgroundColor || Theme.vars.statusBarViewBackgroundIOSColor;
     let barStyleFinal = barStyle || 'default';
     return (
       <View

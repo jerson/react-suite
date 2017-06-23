@@ -63,7 +63,14 @@ export default class Panel extends React.Component<PanelProps, State> {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'relative'
+    position: 'relative',
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 2
+    }
   } as ViewStyle,
   toolbar: {
     position: 'absolute',

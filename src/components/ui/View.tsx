@@ -23,7 +23,5 @@ export default class View extends React.Component<ViewProps, State> {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    //backgroundColor: '#fff',
-  } as ViewStyle
+  container: {} as ViewStyle
 });

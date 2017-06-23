@@ -4,6 +4,7 @@ import View from './View';
 import Text from './Text';
 import Touchable from './Touchable';
 import Icon from './Icon';
+import Theme from '../../modules/theme/Theme';
 
 export interface DrawerItemProps extends ViewStyle {
   children?: JSX.Element;
@@ -80,25 +81,25 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingTop: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#f9f9f9',
+    borderBottomColor: Theme.vars.drawerItemHeaderBorderColor,
     flexDirection: 'row',
     alignItems: 'center'
   },
   headerLabel: {
     paddingLeft: 5,
     fontSize: 11,
-    color: '#888',
+    color: Theme.vars.drawerItemHeaderTextColor,
     fontWeight: '400',
     alignSelf: 'center'
   },
   activeContainer: {
-    backgroundColor: '#25aeec'
+    backgroundColor: Theme.vars.drawerItemActiveBackgroundColor
   },
   activeLabel: {
-    color: '#fff'
+    color: Theme.vars.drawerItemActiveTextColor
   },
   activeIcon: {
-    color: '#fff'
+    color: Theme.vars.drawerItemActiveIconColor
   },
   container: {
     padding: 10,
@@ -110,14 +111,11 @@ const styles = StyleSheet.create({
     marginLeft: 13,
     fontSize: 13,
     flex: 1,
-    // fontWeight: '400',
-    color: '#666',
+    color: Theme.vars.drawerItemTextColor,
     alignSelf: 'center'
-    // backgroundColor:'blue'
   },
   icon: {
     marginLeft: 5,
-    color: '#888'
-    // backgroundColor:'yellow'
+    color: Theme.vars.drawerItemIconColor
   }
 });

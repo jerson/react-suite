@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StyleSheet, ViewStyle } from 'react-native';
 import View from './View';
 import { DrawerProps } from './Drawer';
+import Theme from '../../modules/theme/Theme';
 
 const PropTypes = require('prop-types');
 
@@ -37,17 +38,15 @@ export default class DrawerTablet extends React.Component<
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: Theme.vars.drawerBackgroundColor,
     flexDirection: 'row',
     flex: 1
   } as ViewStyle,
   left: {
-    backgroundColor: '#fff',
-    // borderRightColor: '#f1f1f1',
-    // borderRightWidth: 1,
+    backgroundColor: Theme.vars.drawerBackgroundColor,
     zIndex: 2,
     elevation: 2,
-    shadowColor: 'rgb(76,84,128)',
+    shadowColor: Theme.vars.drawerShadowColor,
     shadowOpacity: 0.1,
     shadowRadius: 2,
     shadowOffset: {
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
     }
   } as ViewStyle,
   right: {
-    backgroundColor: '#fff',
+    backgroundColor: Theme.vars.drawerContentBackgroundColor,
     flex: 1,
     zIndex: 1
   } as ViewStyle

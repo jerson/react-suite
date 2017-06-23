@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { RefreshControl as RefreshControlBase } from 'react-native';
+import Theme from '../../modules/theme/Theme';
 
 export interface RefreshControlProps {
   refreshing: boolean;
@@ -15,8 +16,8 @@ export default class RefreshControl extends React.Component<
     return (
       <RefreshControlBase
         style={{ backgroundColor: 'transparent' }}
-        tintColor={'red'}
-        colors={['blue']}
+        tintColor={Theme.vars.refreshControlTintColor}
+        colors={[Theme.vars.refreshControlColor]}
         {...this.props}
       />
     );

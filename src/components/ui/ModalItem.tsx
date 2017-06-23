@@ -13,6 +13,7 @@ import Log from '../../modules/logger/Log';
 import { BaseModal } from './ModalCenter';
 import CompositeAnimation = Animated.CompositeAnimation;
 import EndCallback = Animated.EndCallback;
+import Theme from '../../modules/theme/Theme';
 
 //export type ModalType = 'default' | 'action';
 
@@ -190,7 +191,7 @@ const styles = StyleSheet.create({
     bottom: 0
   } as ViewStyle,
   backdrop: {
-    backgroundColor: 'rgba(0,0,0,0.25)',
+    backgroundColor: Theme.vars.modalItemBackgroundColor,
     zIndex: 9,
     //flex: 1,
     //position: Platform.OS === 'web' ? 'fixed' : 'absolute',
@@ -202,21 +203,21 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   content: {
     margin: 10,
-    backgroundColor: '#fff',
+    backgroundColor: Theme.vars.modalItemContentBackgroundColor,
     borderRadius: 4,
     flexDirection: 'column'
   } as ViewStyle,
   title: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: '#444'
+    color: Theme.vars.modalItemTextColor
   } as TextStyle,
   header: {
     padding: 20
   } as ViewStyle,
   body: {
     borderTopWidth: 1,
-    borderTopColor: '#f4f4f4'
+    borderTopColor: Theme.vars.modalItemBorderColor
   } as ViewStyle,
   bodyText: {
     padding: 5
@@ -225,6 +226,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 10,
     borderTopWidth: 1,
-    borderTopColor: '#f4f4f4'
+    borderTopColor: Theme.vars.modalItemBorderColor
   } as ViewStyle
 });

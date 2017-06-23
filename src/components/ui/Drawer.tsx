@@ -4,6 +4,7 @@ import DrawerBase from 'react-native-drawer';
 import Emitter from '../../modules/listener/Emitter';
 import Screen from '../../modules/listener/Screen';
 import DrawerTablet from './DrawerTablet';
+import Theme from '../../modules/theme/Theme';
 
 export interface DrawerProps {
   children?: JSX.Element;
@@ -45,7 +46,7 @@ export default class Drawer extends React.Component<DrawerProps, State> {
         zIndex: 9,
         opacity: ratio,
         cursor: 'pointer',
-        backgroundColor: 'rgba(0,0,0,0.4)'
+        backgroundColor: Theme.vars.drawerOverlayBackgroundColor
       }
     };
   }
@@ -103,10 +104,10 @@ export default class Drawer extends React.Component<DrawerProps, State> {
 
     const styles = {
       drawer: {
-        backgroundColor: '#fff',
+        backgroundColor: Theme.vars.drawerBackgroundColor,
         zIndex: 10,
         elevation: 8,
-        shadowColor: 'rgba(0,0,0,0.8)',
+        shadowColor: Theme.vars.drawerShadowColor,
         shadowOpacity: 0.3,
         shadowRadius: 4,
         shadowOffset: {
@@ -114,15 +115,10 @@ export default class Drawer extends React.Component<DrawerProps, State> {
           width: 3
         }
         //position: Platform.OS === 'web' ? 'fixed' : 'absolute',
-        //position: 'absolute',
-        //height
       },
       main: {
-        // backgroundColor: 'red',
         paddingLeft: 30,
         zIndex: 8
-        //width,
-        //height
       }
     };
     if (width < 1) {
