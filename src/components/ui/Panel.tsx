@@ -8,6 +8,7 @@ import {
   ViewStyle
 } from 'react-native';
 import Button, { ButtonProps } from './Button';
+import Theme from '../../modules/theme/Theme';
 
 export interface PanelProps {
   title: string | JSX.Element;
@@ -64,7 +65,7 @@ export default class Panel extends React.Component<PanelProps, State> {
 const styles = StyleSheet.create({
   container: {
     position: 'relative',
-    shadowColor: '#000',
+    shadowColor: Theme.vars.panelShadowColor,
     shadowOpacity: 0.1,
     shadowRadius: 2,
     shadowOffset: {
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: '#f9f9f9',
+    backgroundColor: Theme.vars.panelBackgroundColor,
     alignItems: 'center'
   } as ViewStyle,
   options: {
@@ -92,6 +93,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 15,
     flex: 1,
-    color: '#444444'
+    color: Theme.vars.panelTextColor
   } as TextStyle
 });

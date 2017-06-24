@@ -1,5 +1,4 @@
-import ThemeBuilder, { ThemeDefaultVars } from '../ThemeBuilder';
-import { AppTheme } from '../Theme';
+import ThemeBuilder, {ThemeDefaultVars, ThemeVars} from '../ThemeBuilder';
 const TinyColor = require('tinycolor2');
 
 // let toneColor = '#01060d';
@@ -43,5 +42,5 @@ let defaults: ThemeDefaultVars = {
   borderColor: TinyColor(toneColor).lighten(5).toRgbString(),
   borderSecondaryColor: TinyColor(toneColor).lighten(3).toRgbString()
 };
-let theme: AppTheme = ThemeBuilder.build(defaults);
+let theme: ThemeVars = ThemeBuilder.build(defaults);
 export default theme;
