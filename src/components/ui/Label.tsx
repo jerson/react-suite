@@ -153,23 +153,18 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   containerPrimary: {
     backgroundColor: Theme.vars.labelPrimaryBackgroundColor,
-    shadowColor: Theme.vars.labelPrimaryShadowColor
   } as ViewStyle,
   containerDanger: {
     backgroundColor: Theme.vars.labelDangerBackgroundColor,
-    shadowColor: Theme.vars.labelDangerShadowColor
   } as ViewStyle,
   containerWarning: {
     backgroundColor: Theme.vars.labelWarningBackgroundColor,
-    shadowColor: Theme.vars.labelWarningShadowColor
   } as ViewStyle,
   containerInfo: {
     backgroundColor: Theme.vars.labelInfoBackgroundColor,
-    shadowColor: Theme.vars.labelInfoShadowColor
   } as ViewStyle,
   containerSuccess: {
     backgroundColor: Theme.vars.labelSuccessBackgroundColor,
-    shadowColor: Theme.vars.labelSuccessShadowColor
   } as ViewStyle,
   title: {
     color: Theme.vars.labelDefaultTextColor,
