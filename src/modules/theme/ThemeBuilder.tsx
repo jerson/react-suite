@@ -177,6 +177,7 @@ export default class ThemeBuilder {
             panelIconColor: defaults.textSecondaryColor,
             panelTextColor: defaults.textColor,
             panelBackgroundColor: defaults.backgroundSecondaryColor,
+            panelBorderColor: TinyColor(defaults.backgroundSecondaryColor).darken(1).toHexString(),
 
             textColor: defaults.textColor,
             titleColor: defaults.textColor
@@ -356,6 +357,7 @@ export interface ThemeVars {
     panelIconColor: string;
     panelTextColor: string;
     panelBackgroundColor: string;
+    panelBorderColor: string;
 
     textColor: string;
     titleColor: string;

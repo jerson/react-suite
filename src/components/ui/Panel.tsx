@@ -22,18 +22,18 @@ export interface State {
 export default class Panel extends React.Component<PanelProps, State> {
     render() {
         let {title, style, children, actions, toolbarHeight} = this.props;
-        let height = toolbarHeight || 50;
+        let minHeight = toolbarHeight || 50;
 
         return (
-            <View style={[styles.container,  style]}>
+            <View style={[styles.container, style]}>
 
                 {typeof title === 'object' &&
-                <View style={[styles.toolbar, {height}]}>
+                <View style={[styles.toolbar, {minHeight}]}>
                     {title}
                 </View>}
 
                 {typeof title !== 'object' &&
-                <View style={[styles.toolbar, {height}]}>
+                <View style={[styles.toolbar, {minHeight}]}>
                     <Text style={[styles.title]}>
                         {title}
                     </Text>
@@ -79,12 +79,12 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 4,
         borderTopRightRadius: 4,
         paddingLeft: 10,
-        paddingRight: 10,
-        paddingTop: 5,
-        paddingBottom: 5,
+        paddingRight: 5,
         flex: 1,
         flexDirection: 'row',
         backgroundColor: Theme.vars.panelBackgroundColor,
+        borderBottomWidth: 1,
+        borderBottomColor: Theme.vars.panelBorderColor,
         alignItems: 'center',
 
     } as ViewStyle,
