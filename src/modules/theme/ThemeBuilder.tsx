@@ -176,7 +176,7 @@ export default class ThemeBuilder {
             panelShadowColor: defaults.shadowColor,
             panelIconColor: defaults.textSecondaryColor,
             panelTextColor: defaults.textColor,
-            panelBackgroundColor: defaults.backgroundColor,
+            panelBackgroundColor: defaults.backgroundSecondaryColor,
 
             textColor: defaults.textColor,
             titleColor: defaults.textColor
