@@ -162,7 +162,7 @@ export default class ThemeBuilder {
             refreshControlColor: defaults.primaryColor,
 
             sliderActiveColor: defaults.primaryColor,
-            sliderThumbColor: defaults.textActiveSecondaryColor,
+            sliderThumbColor: defaults.backgroundDarkenColor,
 
             statusBarViewBackgroundIOSColor: TinyColor(defaults.backgroundDarkenColor)
                 .setAlpha(0.1)

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, ViewStyle } from 'react-native';
 import SliderBase from 'react-native-slider';
-import Theme from 'modules/theme/Theme';
+import Theme from '../../modules/theme/Theme';
 
 export interface ProgressBarProps {
   trackStyle?: ViewStyle;

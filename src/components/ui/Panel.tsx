@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
         position: 'relative',
         // backgroundColor: 'red',
 
+        elevation: 2,
         borderRadius: 4,
         shadowRadius: 7,
         shadowColor: Theme.vars.panelShadowColor,

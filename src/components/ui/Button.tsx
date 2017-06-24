@@ -163,7 +163,7 @@ export default class Button extends React.Component<ButtonProps, State> {
 
 const styles = StyleSheet.create({
   content: {
-    flex: 1,
+    //flex: 1,
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center'
