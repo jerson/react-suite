@@ -1,364 +1,407 @@
 const TinyColor = require('tinycolor2');
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 
 export default class ThemeBuilder {
-    static allowShadow(): boolean {
-        return !(Platform.OS === 'android' && Platform.Version < 21);
-    }
+  static allowShadow(): boolean {
+    return !(Platform.OS === 'android' && Platform.Version < 21);
+  }
 
-    static build(defaults: ThemeDefaultVars): ThemeVars {
-        let allowShadow = this.allowShadow();
-        return {
-            defaults: defaults,
-            darkMode: defaults.darkMode,
+  static build(defaults: ThemeDefaultVars): ThemeVars {
+    let allowShadow = this.allowShadow();
+    return {
+      defaults: defaults,
+      darkMode: defaults.darkMode,
 
-            loadingColor: defaults.textColor,
+      loadingColor: defaults.textColor,
 
-            buttonDefaultIconColor: defaults.textSecondaryColor,
-            buttonPrimaryIconColor: defaults.textActiveSecondaryColor,
-            buttonDangerIconColor: defaults.textActiveSecondaryColor,
-            buttonWarningIconColor: defaults.textActiveSecondaryColor,
-            buttonInfoIconColor: defaults.textActiveSecondaryColor,
-            buttonSuccessIconColor: defaults.textActiveSecondaryColor,
+      labelDefaultIconColor: defaults.textSecondaryColor,
+      labelPrimaryIconColor: defaults.textActiveSecondaryColor,
+      labelDangerIconColor: defaults.textActiveSecondaryColor,
+      labelWarningIconColor: defaults.textActiveSecondaryColor,
+      labelInfoIconColor: defaults.textActiveSecondaryColor,
+      labelSuccessIconColor: defaults.textActiveSecondaryColor,
 
-            buttonDefaultTextColor: defaults.textColor,
-            buttonPrimaryTextColor: defaults.textActiveColor,
-            buttonDangerTextColor: defaults.textActiveColor,
-            buttonWarningTextColor: defaults.textActiveColor,
-            buttonInfoTextColor: defaults.textActiveColor,
-            buttonSuccessTextColor: defaults.textActiveColor,
+      labelDefaultTextColor: defaults.textColor,
+      labelPrimaryTextColor: defaults.textActiveColor,
+      labelDangerTextColor: defaults.textActiveColor,
+      labelWarningTextColor: defaults.textActiveColor,
+      labelInfoTextColor: defaults.textActiveColor,
+      labelSuccessTextColor: defaults.textActiveColor,
 
-            buttonDefaultBackgroundColor: defaults.defaultColor,
-            buttonPrimaryBackgroundColor: defaults.primaryColor,
-            buttonDangerBackgroundColor: defaults.dangerColor,
-            buttonWarningBackgroundColor: defaults.warningColor,
-            buttonInfoBackgroundColor: defaults.infoColor,
-            buttonSuccessBackgroundColor: defaults.successColor,
+      labelDefaultBackgroundColor: defaults.defaultColor,
+      labelPrimaryBackgroundColor: defaults.primaryColor,
+      labelDangerBackgroundColor: defaults.dangerColor,
+      labelWarningBackgroundColor: defaults.warningColor,
+      labelInfoBackgroundColor: defaults.infoColor,
+      labelSuccessBackgroundColor: defaults.successColor,
 
-            buttonDefaultShadowColor: TinyColor(defaults.defaultColor)
-                .darken(4)
-                .toHexString(),
-            buttonPrimaryShadowColor: TinyColor(defaults.primaryColor)
-                .darken(4)
-                .toHexString(),
-            buttonDangerShadowColor: TinyColor(defaults.dangerColor)
-                .darken(4)
-                .toHexString(),
-            buttonWarningShadowColor: TinyColor(defaults.warningColor)
-                .darken(4)
-                .toHexString(),
-            buttonInfoShadowColor: TinyColor(defaults.infoColor)
-                .darken(4)
-                .toHexString(),
-            buttonSuccessShadowColor: TinyColor(defaults.successColor)
-                .darken(4)
-                .toHexString(),
+      buttonDefaultIconColor: defaults.textSecondaryColor,
+      buttonPrimaryIconColor: defaults.textActiveSecondaryColor,
+      buttonDangerIconColor: defaults.textActiveSecondaryColor,
+      buttonWarningIconColor: defaults.textActiveSecondaryColor,
+      buttonInfoIconColor: defaults.textActiveSecondaryColor,
+      buttonSuccessIconColor: defaults.textActiveSecondaryColor,
 
-            linkTextColor: defaults.primaryColor,
-            linkIconColor: defaults.primaryColor,
+      buttonDefaultTextColor: defaults.textColor,
+      buttonPrimaryTextColor: defaults.textActiveColor,
+      buttonDangerTextColor: defaults.textActiveColor,
+      buttonWarningTextColor: defaults.textActiveColor,
+      buttonInfoTextColor: defaults.textActiveColor,
+      buttonSuccessTextColor: defaults.textActiveColor,
 
-            inputPlaceholderColor: defaults.textSecondaryColor,
-            inputLabelColor: defaults.textSecondaryColor,
-            inputBorderColor: defaults.borderColor,
-            inputBackgroundColor: TinyColor(defaults.backgroundColor)
-                .darken(2)
-                .toHexString(),
-            inputTextColor: defaults.textColor,
+      buttonDefaultBackgroundColor: defaults.defaultColor,
+      buttonPrimaryBackgroundColor: defaults.primaryColor,
+      buttonDangerBackgroundColor: defaults.dangerColor,
+      buttonWarningBackgroundColor: defaults.warningColor,
+      buttonInfoBackgroundColor: defaults.infoColor,
+      buttonSuccessBackgroundColor: defaults.successColor,
 
-            inputErrorPlaceholderColor: defaults.dangerColor,
-            inputErrorLabelColor: defaults.dangerColor,
-            inputErrorBorderColor: defaults.dangerColor,
-            inputErrorBackgroundColor: TinyColor(defaults.backgroundColor)
-                .darken(2)
-                .toHexString(),
-            inputErrorTextColor: defaults.dangerColor,
+      buttonDefaultShadowColor: TinyColor(defaults.defaultColor)
+        .darken(4)
+        .toHexString(),
+      buttonPrimaryShadowColor: TinyColor(defaults.primaryColor)
+        .darken(4)
+        .toHexString(),
+      buttonDangerShadowColor: TinyColor(defaults.dangerColor)
+        .darken(4)
+        .toHexString(),
+      buttonWarningShadowColor: TinyColor(defaults.warningColor)
+        .darken(4)
+        .toHexString(),
+      buttonInfoShadowColor: TinyColor(defaults.infoColor)
+        .darken(4)
+        .toHexString(),
+      buttonSuccessShadowColor: TinyColor(defaults.successColor)
+        .darken(4)
+        .toHexString(),
 
-            alertMessageDefaultIconColor: defaults.textSecondaryColor,
-            alertMessagePrimaryIconColor: defaults.textActiveSecondaryColor,
-            alertMessageDangerIconColor: defaults.textActiveSecondaryColor,
-            alertMessageWarningIconColor: defaults.textActiveSecondaryColor,
-            alertMessageInfoIconColor: defaults.textActiveSecondaryColor,
-            alertMessageSuccessIconColor: defaults.textActiveSecondaryColor,
+      linkTextColor: defaults.primaryColor,
+      linkIconColor: defaults.primaryColor,
 
-            alertMessageDefaultTitleColor: defaults.textColor,
-            alertMessagePrimaryTitleColor: defaults.textActiveColor,
-            alertMessageDangerTitleColor: defaults.textActiveColor,
-            alertMessageWarningTitleColor: defaults.textActiveColor,
-            alertMessageInfoTitleColor: defaults.textActiveColor,
-            alertMessageSuccessTitleColor: defaults.textActiveColor,
+      inputPlaceholderColor: defaults.textSecondaryColor,
+      inputLabelColor: defaults.textSecondaryColor,
+      inputBorderColor: defaults.borderColor,
+      inputBackgroundColor: TinyColor(defaults.backgroundColor)
+        .darken(2)
+        .toHexString(),
+      inputTextColor: defaults.textColor,
 
-            alertMessageDefaultTextColor: defaults.textSecondaryColor,
-            alertMessagePrimaryTextColor: defaults.textActiveSecondaryColor,
-            alertMessageDangerTextColor: defaults.textActiveSecondaryColor,
-            alertMessageWarningTextColor: defaults.textActiveSecondaryColor,
-            alertMessageInfoTextColor: defaults.textActiveSecondaryColor,
-            alertMessageSuccessTextColor: defaults.textActiveSecondaryColor,
+      inputErrorPlaceholderColor: defaults.dangerColor,
+      inputErrorLabelColor: defaults.dangerColor,
+      inputErrorBorderColor: defaults.dangerColor,
+      inputErrorBackgroundColor: TinyColor(defaults.backgroundColor)
+        .darken(2)
+        .toHexString(),
+      inputErrorTextColor: defaults.dangerColor,
 
-            alertMessageDefaultBackgroundColor: defaults.defaultColor,
-            alertMessagePrimaryBackgroundColor: defaults.primaryColor,
-            alertMessageDangerBackgroundColor: defaults.dangerColor,
-            alertMessageWarningBackgroundColor: defaults.warningColor,
-            alertMessageInfoBackgroundColor: defaults.infoColor,
-            alertMessageSuccessBackgroundColor: defaults.successColor,
+      alertMessageDefaultIconColor: defaults.textSecondaryColor,
+      alertMessagePrimaryIconColor: defaults.textActiveSecondaryColor,
+      alertMessageDangerIconColor: defaults.textActiveSecondaryColor,
+      alertMessageWarningIconColor: defaults.textActiveSecondaryColor,
+      alertMessageInfoIconColor: defaults.textActiveSecondaryColor,
+      alertMessageSuccessIconColor: defaults.textActiveSecondaryColor,
 
-            blurImageBackgroundColor: defaults.backgroundDarkenColor,
-            blurImageOverlayBackgroundColor: TinyColor(defaults.backgroundDarkenColor)
-                .setAlpha(0.3)
-                .toRgbString(),
+      alertMessageDefaultTitleColor: defaults.textColor,
+      alertMessagePrimaryTitleColor: defaults.textActiveColor,
+      alertMessageDangerTitleColor: defaults.textActiveColor,
+      alertMessageWarningTitleColor: defaults.textActiveColor,
+      alertMessageInfoTitleColor: defaults.textActiveColor,
+      alertMessageSuccessTitleColor: defaults.textActiveColor,
 
-            drawerBackgroundColor: defaults.backgroundColor,
-            drawerOverlayBackgroundColor: TinyColor(defaults.backgroundDarkenColor)
-                .setAlpha(0.3)
-                .toRgbString(),
+      alertMessageDefaultTextColor: defaults.textSecondaryColor,
+      alertMessagePrimaryTextColor: defaults.textActiveSecondaryColor,
+      alertMessageDangerTextColor: defaults.textActiveSecondaryColor,
+      alertMessageWarningTextColor: defaults.textActiveSecondaryColor,
+      alertMessageInfoTextColor: defaults.textActiveSecondaryColor,
+      alertMessageSuccessTextColor: defaults.textActiveSecondaryColor,
 
-            drawerContentBackgroundColor: defaults.backgroundSecondaryColor,
-            drawerShadowColor: defaults.shadowColor,
+      alertMessageDefaultBackgroundColor: defaults.defaultColor,
+      alertMessagePrimaryBackgroundColor: defaults.primaryColor,
+      alertMessageDangerBackgroundColor: defaults.dangerColor,
+      alertMessageWarningBackgroundColor: defaults.warningColor,
+      alertMessageInfoBackgroundColor: defaults.infoColor,
+      alertMessageSuccessBackgroundColor: defaults.successColor,
 
-            drawerFooterTextColor: defaults.textSecondaryColor,
-            drawerFooterIconColor: defaults.textSecondaryColor,
-            drawerFooterBorderColor: defaults.borderColor,
+      blurImageBackgroundColor: defaults.backgroundDarkenColor,
+      blurImageOverlayBackgroundColor: TinyColor(defaults.backgroundDarkenColor)
+        .setAlpha(0.3)
+        .toRgbString(),
 
-            drawerHeaderTextColor: defaults.textColor,
-            drawerHeaderBackgroundColor: defaults.backgroundColor,
+      drawerBackgroundColor: defaults.backgroundColor,
+      drawerOverlayBackgroundColor: TinyColor(defaults.backgroundDarkenColor)
+        .setAlpha(0.3)
+        .toRgbString(),
 
-            drawerItemHeaderTextColor: defaults.textSecondaryColor,
-            drawerItemHeaderBorderColor: defaults.borderColor,
+      drawerContentBackgroundColor: defaults.backgroundSecondaryColor,
+      drawerShadowColor: defaults.shadowColor,
 
-            drawerItemTextColor: defaults.textColor,
-            drawerItemIconColor: defaults.textSecondaryColor,
+      drawerFooterTextColor: defaults.textSecondaryColor,
+      drawerFooterIconColor: defaults.textSecondaryColor,
+      drawerFooterBorderColor: defaults.borderColor,
 
-            drawerItemActiveTextColor: defaults.textActiveColor,
-            drawerItemActiveIconColor: defaults.textActiveSecondaryColor,
-            drawerItemActiveBackgroundColor: defaults.primaryColor,
+      drawerHeaderTextColor: defaults.textColor,
+      drawerHeaderBackgroundColor: defaults.backgroundColor,
 
-            headerIconColor: defaults.textSecondaryColor,
-            headerTextColor: defaults.textColor,
-            headerBackgroundColor: defaults.backgroundColor,
-            headerShadowColor: defaults.shadowColor,
+      drawerItemHeaderTextColor: defaults.textSecondaryColor,
+      drawerItemHeaderBorderColor: defaults.borderColor,
 
-            headerActionIconColor: defaults.primaryColor,
+      drawerItemTextColor: defaults.textColor,
+      drawerItemIconColor: defaults.textSecondaryColor,
 
-            modalActionItemBackgroundColor: TinyColor(defaults.backgroundDarkenColor)
-                .setAlpha(0.3)
-                .toRgbString(),
-            modalActionItemBorderColor: defaults.borderColor,
-            modalActionItemTextColor: defaults.textColor,
-            modalActionItemContentBackgroundColor: defaults.backgroundSecondaryColor,
+      drawerItemActiveTextColor: defaults.textActiveColor,
+      drawerItemActiveIconColor: defaults.textActiveSecondaryColor,
+      drawerItemActiveBackgroundColor: defaults.primaryColor,
 
-            modalItemBackgroundColor: TinyColor(defaults.backgroundDarkenColor)
-                .setAlpha(0.3)
-                .toRgbString(),
-            modalItemBorderColor: defaults.borderColor,
-            modalItemTextColor: defaults.textColor,
-            modalItemContentBackgroundColor: defaults.backgroundColor,
+      headerIconColor: defaults.textSecondaryColor,
+      headerTextColor: defaults.textColor,
+      headerBackgroundColor: defaults.backgroundColor,
+      headerShadowColor: defaults.shadowColor,
 
-            optionItemBorderColor: defaults.borderColor,
-            optionItemIconColor: defaults.textSecondaryColor,
-            optionItemTextColor: defaults.textColor,
+      headerActionIconColor: defaults.primaryColor,
 
-            progressBarActiveColor: defaults.primaryColor,
+      modalActionItemBackgroundColor: TinyColor(defaults.backgroundDarkenColor)
+        .setAlpha(0.3)
+        .toRgbString(),
+      modalActionItemBorderColor: defaults.borderColor,
+      modalActionItemTextColor: defaults.textColor,
+      modalActionItemContentBackgroundColor: defaults.backgroundSecondaryColor,
 
-            refreshControlTintColor: defaults.primaryColor,
-            refreshControlColor: defaults.primaryColor,
+      modalItemBackgroundColor: TinyColor(defaults.backgroundDarkenColor)
+        .setAlpha(0.3)
+        .toRgbString(),
+      modalItemBorderColor: defaults.borderColor,
+      modalItemTextColor: defaults.textColor,
+      modalItemContentBackgroundColor: defaults.backgroundColor,
 
-            sliderActiveColor: defaults.primaryColor,
-            sliderThumbColor: defaults.backgroundDarkenColor,
+      optionItemBorderColor: defaults.borderColor,
+      optionItemIconColor: defaults.textSecondaryColor,
+      optionItemTextColor: defaults.textColor,
 
-            statusBarViewBackgroundIOSColor: TinyColor(defaults.backgroundDarkenColor)
-                .setAlpha(0.1)
-                .toRgbString(),
-            statusBarViewBackgroundAndroidColor: defaults.backgroundDarkenColor,
+      progressBarActiveColor: defaults.primaryColor,
 
-            switchTintColor: defaults.borderColor,
-            switchOnTintColor: defaults.backgroundColor,
-            switchThumbTintColor: defaults.primaryColor,
+      refreshControlTintColor: defaults.primaryColor,
+      refreshControlColor: defaults.primaryColor,
 
-            panelShadowColor: defaults.shadowColor,
-            panelIconColor: defaults.textSecondaryColor,
-            panelTextColor: defaults.textColor,
-            panelBackgroundColor: defaults.backgroundSecondaryColor,
-            panelBorderColor: TinyColor(defaults.backgroundSecondaryColor).darken(1).toHexString(),
+      sliderActiveColor: defaults.primaryColor,
+      sliderThumbColor: defaults.backgroundDarkenColor,
 
-            textColor: defaults.textColor,
-            titleColor: defaults.textColor
-        };
-    }
+      statusBarViewBackgroundIOSColor: TinyColor(defaults.backgroundDarkenColor)
+        .setAlpha(0.1)
+        .toRgbString(),
+      statusBarViewBackgroundAndroidColor: defaults.backgroundDarkenColor,
+
+      switchTintColor: defaults.borderColor,
+      switchOnTintColor: defaults.backgroundColor,
+      switchThumbTintColor: defaults.primaryColor,
+
+      panelShadowColor: defaults.shadowColor,
+      panelIconColor: defaults.textSecondaryColor,
+      panelTextColor: defaults.textColor,
+      panelBackgroundColor: defaults.backgroundSecondaryColor,
+      panelBorderColor: TinyColor(defaults.backgroundSecondaryColor)
+        .darken(1)
+        .toHexString(),
+
+      textColor: defaults.textColor,
+      titleColor: defaults.textColor
+    };
+  }
 }
 
 export interface ThemeDefaultVars {
-    darkMode: boolean;
+  darkMode: boolean;
 
-    defaultColor: string;
-    primaryColor: string;
-    dangerColor: string;
-    warningColor: string;
-    infoColor: string;
-    successColor: string;
+  defaultColor: string;
+  primaryColor: string;
+  dangerColor: string;
+  warningColor: string;
+  infoColor: string;
+  successColor: string;
 
-    textShadowColor: string;
-    shadowColor: string;
+  textShadowColor: string;
+  shadowColor: string;
 
-    textColor: string;
-    textSecondaryColor: string;
+  textColor: string;
+  textSecondaryColor: string;
 
-    textActiveColor: string;
-    textActiveSecondaryColor: string;
+  textActiveColor: string;
+  textActiveSecondaryColor: string;
 
-    backgroundColor: string;
-    backgroundSecondaryColor: string;
+  backgroundColor: string;
+  backgroundSecondaryColor: string;
 
-    backgroundDarkenColor: string;
+  backgroundDarkenColor: string;
 
-    borderColor: string;
-    borderSecondaryColor: string;
+  borderColor: string;
+  borderSecondaryColor: string;
 }
 
-
 export interface ThemeVars {
-    defaults: ThemeDefaultVars;
-    darkMode: boolean;
+  defaults: ThemeDefaultVars;
+  darkMode: boolean;
 
-    loadingColor: string;
+  loadingColor: string;
 
-    buttonDefaultIconColor: string;
-    buttonPrimaryIconColor: string;
-    buttonDangerIconColor: string;
-    buttonWarningIconColor: string;
-    buttonInfoIconColor: string;
-    buttonSuccessIconColor: string;
+  labelDefaultIconColor: string;
+  labelPrimaryIconColor: string;
+  labelDangerIconColor: string;
+  labelWarningIconColor: string;
+  labelInfoIconColor: string;
+  labelSuccessIconColor: string;
 
-    buttonDefaultTextColor: string;
-    buttonPrimaryTextColor: string;
-    buttonDangerTextColor: string;
-    buttonWarningTextColor: string;
-    buttonInfoTextColor: string;
-    buttonSuccessTextColor: string;
+  labelDefaultTextColor: string;
+  labelPrimaryTextColor: string;
+  labelDangerTextColor: string;
+  labelWarningTextColor: string;
+  labelInfoTextColor: string;
+  labelSuccessTextColor: string;
 
-    buttonDefaultBackgroundColor: string;
-    buttonPrimaryBackgroundColor: string;
-    buttonDangerBackgroundColor: string;
-    buttonWarningBackgroundColor: string;
-    buttonInfoBackgroundColor: string;
-    buttonSuccessBackgroundColor: string;
+  labelDefaultBackgroundColor: string;
+  labelPrimaryBackgroundColor: string;
+  labelDangerBackgroundColor: string;
+  labelWarningBackgroundColor: string;
+  labelInfoBackgroundColor: string;
+  labelSuccessBackgroundColor: string;
 
-    buttonDefaultShadowColor: string;
-    buttonPrimaryShadowColor: string;
-    buttonDangerShadowColor: string;
-    buttonWarningShadowColor: string;
-    buttonInfoShadowColor: string;
-    buttonSuccessShadowColor: string;
+  buttonDefaultIconColor: string;
+  buttonPrimaryIconColor: string;
+  buttonDangerIconColor: string;
+  buttonWarningIconColor: string;
+  buttonInfoIconColor: string;
+  buttonSuccessIconColor: string;
 
-    linkTextColor: string;
-    linkIconColor: string;
+  buttonDefaultTextColor: string;
+  buttonPrimaryTextColor: string;
+  buttonDangerTextColor: string;
+  buttonWarningTextColor: string;
+  buttonInfoTextColor: string;
+  buttonSuccessTextColor: string;
 
-    inputPlaceholderColor: string;
-    inputLabelColor: string;
-    inputBorderColor: string;
-    inputBackgroundColor: string;
-    inputTextColor: string;
+  buttonDefaultBackgroundColor: string;
+  buttonPrimaryBackgroundColor: string;
+  buttonDangerBackgroundColor: string;
+  buttonWarningBackgroundColor: string;
+  buttonInfoBackgroundColor: string;
+  buttonSuccessBackgroundColor: string;
 
-    inputErrorPlaceholderColor: string;
-    inputErrorLabelColor: string;
-    inputErrorBorderColor: string;
-    inputErrorBackgroundColor: string;
-    inputErrorTextColor: string;
+  buttonDefaultShadowColor: string;
+  buttonPrimaryShadowColor: string;
+  buttonDangerShadowColor: string;
+  buttonWarningShadowColor: string;
+  buttonInfoShadowColor: string;
+  buttonSuccessShadowColor: string;
 
-    alertMessageDefaultIconColor: string;
-    alertMessagePrimaryIconColor: string;
-    alertMessageDangerIconColor: string;
-    alertMessageWarningIconColor: string;
-    alertMessageInfoIconColor: string;
-    alertMessageSuccessIconColor: string;
+  linkTextColor: string;
+  linkIconColor: string;
 
-    alertMessageDefaultTitleColor: string;
-    alertMessagePrimaryTitleColor: string;
-    alertMessageDangerTitleColor: string;
-    alertMessageWarningTitleColor: string;
-    alertMessageInfoTitleColor: string;
-    alertMessageSuccessTitleColor: string;
+  inputPlaceholderColor: string;
+  inputLabelColor: string;
+  inputBorderColor: string;
+  inputBackgroundColor: string;
+  inputTextColor: string;
 
-    alertMessageDefaultTextColor: string;
-    alertMessagePrimaryTextColor: string;
-    alertMessageDangerTextColor: string;
-    alertMessageWarningTextColor: string;
-    alertMessageInfoTextColor: string;
-    alertMessageSuccessTextColor: string;
+  inputErrorPlaceholderColor: string;
+  inputErrorLabelColor: string;
+  inputErrorBorderColor: string;
+  inputErrorBackgroundColor: string;
+  inputErrorTextColor: string;
 
-    alertMessageDefaultBackgroundColor: string;
-    alertMessagePrimaryBackgroundColor: string;
-    alertMessageDangerBackgroundColor: string;
-    alertMessageWarningBackgroundColor: string;
-    alertMessageInfoBackgroundColor: string;
-    alertMessageSuccessBackgroundColor: string;
+  alertMessageDefaultIconColor: string;
+  alertMessagePrimaryIconColor: string;
+  alertMessageDangerIconColor: string;
+  alertMessageWarningIconColor: string;
+  alertMessageInfoIconColor: string;
+  alertMessageSuccessIconColor: string;
 
-    blurImageBackgroundColor: string;
-    blurImageOverlayBackgroundColor: string;
+  alertMessageDefaultTitleColor: string;
+  alertMessagePrimaryTitleColor: string;
+  alertMessageDangerTitleColor: string;
+  alertMessageWarningTitleColor: string;
+  alertMessageInfoTitleColor: string;
+  alertMessageSuccessTitleColor: string;
 
-    drawerBackgroundColor: string;
-    drawerOverlayBackgroundColor: string;
+  alertMessageDefaultTextColor: string;
+  alertMessagePrimaryTextColor: string;
+  alertMessageDangerTextColor: string;
+  alertMessageWarningTextColor: string;
+  alertMessageInfoTextColor: string;
+  alertMessageSuccessTextColor: string;
 
-    drawerContentBackgroundColor: string;
-    drawerShadowColor: string;
+  alertMessageDefaultBackgroundColor: string;
+  alertMessagePrimaryBackgroundColor: string;
+  alertMessageDangerBackgroundColor: string;
+  alertMessageWarningBackgroundColor: string;
+  alertMessageInfoBackgroundColor: string;
+  alertMessageSuccessBackgroundColor: string;
 
-    drawerFooterTextColor: string;
-    drawerFooterIconColor: string;
-    drawerFooterBorderColor: string;
+  blurImageBackgroundColor: string;
+  blurImageOverlayBackgroundColor: string;
 
-    drawerHeaderTextColor: string;
-    drawerHeaderBackgroundColor: string;
+  drawerBackgroundColor: string;
+  drawerOverlayBackgroundColor: string;
 
-    drawerItemHeaderTextColor: string;
-    drawerItemHeaderBorderColor: string;
+  drawerContentBackgroundColor: string;
+  drawerShadowColor: string;
 
-    drawerItemTextColor: string;
-    drawerItemIconColor: string;
+  drawerFooterTextColor: string;
+  drawerFooterIconColor: string;
+  drawerFooterBorderColor: string;
 
-    drawerItemActiveTextColor: string;
-    drawerItemActiveIconColor: string;
-    drawerItemActiveBackgroundColor: string;
+  drawerHeaderTextColor: string;
+  drawerHeaderBackgroundColor: string;
 
-    headerIconColor: string;
-    headerTextColor: string;
-    headerBackgroundColor: string;
-    headerShadowColor: string;
+  drawerItemHeaderTextColor: string;
+  drawerItemHeaderBorderColor: string;
 
-    headerActionIconColor: string;
+  drawerItemTextColor: string;
+  drawerItemIconColor: string;
 
-    modalActionItemBackgroundColor: string;
-    modalActionItemBorderColor: string;
-    modalActionItemTextColor: string;
-    modalActionItemContentBackgroundColor: string;
+  drawerItemActiveTextColor: string;
+  drawerItemActiveIconColor: string;
+  drawerItemActiveBackgroundColor: string;
 
-    modalItemBackgroundColor: string;
-    modalItemBorderColor: string;
-    modalItemTextColor: string;
-    modalItemContentBackgroundColor: string;
+  headerIconColor: string;
+  headerTextColor: string;
+  headerBackgroundColor: string;
+  headerShadowColor: string;
 
-    optionItemBorderColor: string;
-    optionItemIconColor: string;
-    optionItemTextColor: string;
+  headerActionIconColor: string;
 
-    progressBarActiveColor: string;
+  modalActionItemBackgroundColor: string;
+  modalActionItemBorderColor: string;
+  modalActionItemTextColor: string;
+  modalActionItemContentBackgroundColor: string;
 
-    refreshControlTintColor: string;
-    refreshControlColor: string;
+  modalItemBackgroundColor: string;
+  modalItemBorderColor: string;
+  modalItemTextColor: string;
+  modalItemContentBackgroundColor: string;
 
-    sliderActiveColor: string;
-    sliderThumbColor: string;
+  optionItemBorderColor: string;
+  optionItemIconColor: string;
+  optionItemTextColor: string;
 
-    statusBarViewBackgroundIOSColor: string;
-    statusBarViewBackgroundAndroidColor: string;
+  progressBarActiveColor: string;
 
-    switchTintColor: string;
-    switchOnTintColor: string;
-    switchThumbTintColor: string;
+  refreshControlTintColor: string;
+  refreshControlColor: string;
 
-    panelShadowColor: string;
-    panelIconColor: string;
-    panelTextColor: string;
-    panelBackgroundColor: string;
-    panelBorderColor: string;
+  sliderActiveColor: string;
+  sliderThumbColor: string;
 
-    textColor: string;
-    titleColor: string;
+  statusBarViewBackgroundIOSColor: string;
+  statusBarViewBackgroundAndroidColor: string;
+
+  switchTintColor: string;
+  switchOnTintColor: string;
+  switchThumbTintColor: string;
+
+  panelShadowColor: string;
+  panelIconColor: string;
+  panelTextColor: string;
+  panelBackgroundColor: string;
+  panelBorderColor: string;
+
+  textColor: string;
+  titleColor: string;
 }

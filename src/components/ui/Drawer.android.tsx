@@ -2,17 +2,25 @@ import * as React from 'react';
 import { DrawerLayoutAndroid } from 'react-native';
 import Emitter from '../../modules/listener/Emitter';
 import Screen from '../../modules/listener/Screen';
+import DrawerTablet from './DrawerTablet';
 
 const PropTypes = require('prop-types');
 
 export interface DrawerProps {
   children?: JSX.Element;
   content: JSX.Element;
+  tabletContent?: JSX.Element;
+  useTabledMode?: boolean;
+  tabledModeMinWidth?: number;
   onOpenStart?: () => void;
   onCloseStart?: () => void;
 }
 
-export interface State {}
+export interface State {
+  isOpen: boolean;
+  height: number;
+  width: number;
+}
 
 export default class DrawerAndroid extends React.Component<DrawerProps, State> {
   static childContextTypes = {
@@ -21,7 +29,8 @@ export default class DrawerAndroid extends React.Component<DrawerProps, State> {
 
   state = {
     isOpen: false,
-    width: 0
+    width: 0,
+    height: 0
   };
 
   refs: {
@@ -92,19 +101,40 @@ export default class DrawerAndroid extends React.Component<DrawerProps, State> {
   }
 
   render() {
-    let { width } = this.state;
+    let { width, height } = this.state;
     if (width < 1) {
       return null;
     }
-    let drawerWidth = width > 360 ? 360 : width;
-    drawerWidth *= width < 250 ? 0.9 : 0.8;
 
-    let { content, children, ...props } = this.props;
+    let {
+      tabledModeMinWidth,
+      tabletContent,
+      content,
+      children,
+      useTabledMode,
+      ...props
+    } = this.props;
+
+    let containerWidth = width || 300;
+    let maxWidth = containerWidth > 360 ? 360 : containerWidth;
+    maxWidth *= containerWidth < 250 ? 0.9 : 0.8;
+
+    let minWidthTabled = tabledModeMinWidth || 800;
+
+    if (width > minWidthTabled && useTabledMode) {
+      return (
+        <DrawerTablet
+          leftStyle={{ width: maxWidth }}
+          content={tabletContent ? tabletContent : content}
+          {...this.props}
+        />
+      );
+    }
 
     return (
       <DrawerLayoutAndroid
         ref='drawer'
-        drawerWidth={drawerWidth}
+        drawerWidth={maxWidth}
         onDrawerOpen={this.onDrawerOpen.bind(this)}
         onDrawerClose={this.onDrawerClose.bind(this)}
         drawerPosition={DrawerLayoutAndroid.positions.Left}

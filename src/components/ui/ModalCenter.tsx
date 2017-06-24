@@ -163,6 +163,8 @@ export default class ModalCenter extends React.Component<
 
 const styles = StyleSheet.create({
   container: {
+    zIndex: 100,
+    elevation: 10,
     justifyContent: 'center',
     //flex: 1,
     //position: Platform.OS === 'web' ? 'fixed' : 'absolute',

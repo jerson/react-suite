@@ -16,7 +16,11 @@ export interface DrawerProps {
   onCloseStart?: () => void;
 }
 
-export interface State {}
+export interface State {
+  isOpen: boolean;
+  height: number;
+  width: number;
+}
 
 export default class Drawer extends React.Component<DrawerProps, State> {
   state = {
@@ -121,9 +125,7 @@ export default class Drawer extends React.Component<DrawerProps, State> {
         zIndex: 8
       }
     };
-    if (width < 1) {
-      return null;
-    }
+
     let containerWidth = width || 300;
     let maxWidth = containerWidth > 360 ? 360 : containerWidth;
     maxWidth *= containerWidth < 250 ? 0.9 : 0.8;
