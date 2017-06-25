@@ -1,4 +1,4 @@
-import ThemeBuilder, {ThemeDefaultVars, ThemeVars} from '../ThemeBuilder';
+import ThemeBuilder, { ThemeDefaultVars, ThemeVars } from '../ThemeBuilder';
 const TinyColor = require('tinycolor2');
 
 // let toneColor = '#01060d';

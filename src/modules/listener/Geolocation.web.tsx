@@ -13,12 +13,6 @@ export interface Settings {
 }
 
 export default class GeolocationWeb {
-  public static options = {
-    enableHighAccuracy: true,
-    timeout: 1000 * 10,
-    maximumAge: 0
-  };
-
   public static settings: Settings = {
     messageTitle: _('Permission required'),
     messageDescription: _('must allow to continue')
@@ -32,12 +26,14 @@ export default class GeolocationWeb {
       this.settings = Object.assign({}, this.settings, settings);
     }
 
-    this.checkWatcher(false);
+    this.checkWatcher(true);
   }
 
   static getPosition(): Coordinates {
     Log.log('[GEOLOCATION]', 'getPosition');
-    return this.lastPosition.coords || this.initialPosition.coords;
+    let lastPosition = this.lastPosition || { coords: {} };
+    let initialPosition = this.initialPosition || { coords: {} };
+    return lastPosition.coords || initialPosition.coords;
   }
 
   static async checkWatcher(forced: boolean = true) {
@@ -70,24 +66,23 @@ export default class GeolocationWeb {
           reject(error);
           Log.warn('[GEOLOCATION]', '[ERROR]', error);
         },
-        this.options
+        {
+          enableHighAccuracy: true,
+          timeout: 1000 * 30,
+          maximumAge: 0
+        }
       );
     });
   }
 
-  protected static initWatcher() {
+  protected static async initWatcher() {
     Log.log('[GEOLOCATION]', 'initWatcher');
 
     if (this.watchID) {
       navigator.geolocation.clearWatch(this.watchID);
     }
-    this.updateLocation();
+    await this.updateLocation();
     try {
-      const options = {
-        enableHighAccuracy: true,
-        timeout: 1000 * 10,
-        maximumAge: 0
-      };
       this.watchID = navigator.geolocation.watchPosition(
         lastPosition => {
           this.lastPosition = lastPosition;
@@ -99,7 +94,10 @@ export default class GeolocationWeb {
         error => {
           Log.warn('[GEOLOCATION]', '[ERROR]', error);
         },
-        options
+        {
+          enableHighAccuracy: true,
+          maximumAge: 0
+        }
       );
     } catch (e) {
       Log.warn('[GEOLOCATION]', '[ERROR]', e);

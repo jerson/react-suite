@@ -1,4 +1,4 @@
-import ThemeBuilder, {ThemeDefaultVars, ThemeVars} from '../ThemeBuilder';
+import ThemeBuilder, { ThemeDefaultVars, ThemeVars } from '../ThemeBuilder';
 
 let defaults: ThemeDefaultVars = {
   darkMode: false,

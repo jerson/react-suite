@@ -81,11 +81,11 @@ export default class Screen {
   private static didUpdateDimensions(update: Dimensions) {
     Log.log('[SCREEN]', 'didUpdateDimensions', update);
     let dimension = this.getScreenDimensions();
-    if (this.dimensions !== dimension) {
-      this.dimensions = dimension;
-      Emitter.emit('onDimensionsChange', this.dimensions);
-      this.updateOrientation();
-    }
+    //if (this.dimensions !== dimension) {
+    this.dimensions = dimension;
+    Emitter.emit('onDimensionsChange', this.dimensions);
+    //this.updateOrientation();
+    //}
   }
 
   private static checkAppState(newState: string) {
