@@ -39,6 +39,7 @@ export default class ListView extends React.Component<ListViewProps, State> {
   };
 
   refreshView() {
+    //FIXME no funciona del todo
     this.forceUpdate();
   }
 
