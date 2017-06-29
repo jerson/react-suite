@@ -12,7 +12,7 @@ export interface ScrollViewProps extends ScrollViewProperties {
 
 export interface State {}
 
-export default class ScrollView extends React.PureComponent<
+export default class ScrollView extends React.Component<
   ScrollViewProps,
   State
 > {

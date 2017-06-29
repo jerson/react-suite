@@ -9,7 +9,7 @@ export interface ViewSpacerProps extends ViewProps {
 
 export interface State {}
 
-export default class ViewSpacer extends React.PureComponent<
+export default class ViewSpacer extends React.Component<
   ViewSpacerProps,
   State
 > {

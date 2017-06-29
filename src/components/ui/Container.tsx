@@ -11,10 +11,7 @@ export interface ContainerProps extends ViewProps {
 
 export interface State {}
 
-export default class Container extends React.PureComponent<
-  ContainerProps,
-  State
-> {
+export default class Container extends React.Component<ContainerProps, State> {
   render() {
     let { noScroll, maxWidth, style, ...props } = this.props;
     let maxWidthFinal = maxWidth || 900;

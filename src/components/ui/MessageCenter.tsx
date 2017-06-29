@@ -12,7 +12,7 @@ export interface State {
   messages: Message[];
 }
 
-export default class MessageCenter extends React.PureComponent<
+export default class MessageCenter extends React.Component<
   MessageCenterProps,
   State
 > {

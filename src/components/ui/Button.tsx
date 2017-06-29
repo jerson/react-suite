@@ -22,7 +22,7 @@ export interface ButtonProps extends TouchableProps {
 
 export interface State {}
 
-export default class Button extends React.PureComponent<ButtonProps, State> {
+export default class Button extends React.Component<ButtonProps, State> {
   render() {
     let {
       children,

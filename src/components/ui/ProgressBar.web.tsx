@@ -16,7 +16,7 @@ export interface ProgressBarProps {
 
 export interface State {}
 
-export default class ProgressBarWeb extends React.PureComponent<
+export default class ProgressBarWeb extends React.Component<
   ProgressBarProps,
   State
 > {

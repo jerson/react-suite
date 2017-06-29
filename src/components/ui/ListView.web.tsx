@@ -46,10 +46,7 @@ export class DataSource {
   }
 }
 
-export default class ListViewWeb extends React.PureComponent<
-  ListViewProps,
-  State
-> {
+export default class ListViewWeb extends React.Component<ListViewProps, State> {
   public static DataSource: any = DataSource;
 
   refs: {

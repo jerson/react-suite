@@ -10,7 +10,7 @@ export interface HeaderActionProps extends LinkProps {
 
 export interface State {}
 
-export default class HeaderAction extends React.PureComponent<
+export default class HeaderAction extends React.Component<
   HeaderActionProps,
   State
 > {

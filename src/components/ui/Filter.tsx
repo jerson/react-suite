@@ -19,7 +19,7 @@ export interface State {
   inputWidth: number;
 }
 
-export default class Filter extends React.PureComponent<FilterProps, State> {
+export default class Filter extends React.Component<FilterProps, State> {
   state = {
     text: '',
     inputWidth: Screen.getDimensions().width

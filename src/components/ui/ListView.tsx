@@ -30,10 +30,7 @@ export interface ListViewProps extends ListViewProperties {
 
 export interface State {}
 
-export default class ListView extends React.PureComponent<
-  ListViewProps,
-  State
-> {
+export default class ListView extends React.Component<ListViewProps, State> {
   public static DataSource: any = BaseListView.DataSource;
 
   refs: {

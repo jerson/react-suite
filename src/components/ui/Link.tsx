@@ -21,7 +21,7 @@ export interface LinkProps extends TouchableProps {
 
 export interface State {}
 
-export default class Link extends React.PureComponent<LinkProps, State> {
+export default class Link extends React.Component<LinkProps, State> {
   render() {
     let {
       children,

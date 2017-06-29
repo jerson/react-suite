@@ -22,7 +22,7 @@ export interface DrawerItemProps extends ViewStyle {
 
 export interface State {}
 
-export default class DrawerItem extends React.PureComponent<
+export default class DrawerItem extends React.Component<
   DrawerItemProps,
   State
 > {

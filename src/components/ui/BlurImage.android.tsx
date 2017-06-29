@@ -22,7 +22,7 @@ export interface State {
   viewRef: any;
 }
 
-export default class BlurImageAndroid extends React.PureComponent<
+export default class BlurImageAndroid extends React.Component<
   BlurImageProps,
   State
 > {

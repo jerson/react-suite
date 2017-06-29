@@ -13,10 +13,7 @@ export interface TouchableProps extends TouchableOpacityProperties {
 
 export interface State {}
 
-export default class Touchable extends React.PureComponent<
-  TouchableProps,
-  State
-> {
+export default class Touchable extends React.Component<TouchableProps, State> {
   render() {
     let { ...props } = this.props;
     return <TouchableOpacity {...props} />;

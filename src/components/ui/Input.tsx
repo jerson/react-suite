@@ -25,7 +25,7 @@ export interface State {
   value: string;
 }
 
-export default class Input extends React.PureComponent<InputProps, State> {
+export default class Input extends React.Component<InputProps, State> {
   state = {
     value: ''
   };

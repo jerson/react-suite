@@ -20,7 +20,7 @@ export interface LabelProps {
 
 export interface State {}
 
-export default class Label extends React.PureComponent<LabelProps, State> {
+export default class Label extends React.Component<LabelProps, State> {
   render() {
     let {
       children,

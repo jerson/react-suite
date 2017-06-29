@@ -9,7 +9,7 @@ export interface BlurImageProps extends ImageProps {
 
 export interface State {}
 
-export default class BlurImageIOS extends React.PureComponent<
+export default class BlurImageIOS extends React.Component<
   BlurImageProps,
   State
 > {

@@ -18,7 +18,7 @@ export interface PanelAction extends ButtonProps {
 
 export interface State {}
 
-export default class Panel extends React.PureComponent<PanelProps, State> {
+export default class Panel extends React.Component<PanelProps, State> {
   render() {
     let { title, style, children, actions, toolbarHeight } = this.props;
     let minHeight = toolbarHeight || 50;

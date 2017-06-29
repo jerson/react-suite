@@ -8,7 +8,7 @@ export interface SwitchProps extends SwitchProperties {
 
 export interface State {}
 
-export default class Switch extends React.PureComponent<SwitchProps, State> {
+export default class Switch extends React.Component<SwitchProps, State> {
   render() {
     let { activeColor, ...props } = this.props;
     activeColor = activeColor || Theme.vars.switchTintColor;

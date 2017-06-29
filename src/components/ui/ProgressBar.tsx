@@ -13,7 +13,7 @@ export interface ProgressBarProps {
 
 export interface State {}
 
-export default class ProgressBar extends React.PureComponent<
+export default class ProgressBar extends React.Component<
   ProgressBarProps,
   State
 > {
