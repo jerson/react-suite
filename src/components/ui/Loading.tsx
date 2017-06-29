@@ -16,7 +16,7 @@ export interface LoadingProps {
 
 export interface State {}
 
-export default class Loading extends React.Component<LoadingProps, State> {
+export default class Loading extends React.PureComponent<LoadingProps, State> {
   render() {
     let { style, color, ...props } = this.props;
     color = color || Theme.vars.loadingColor;

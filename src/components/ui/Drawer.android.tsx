@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { DrawerLayoutAndroid, StyleSheet, ViewStyle } from 'react-native';
 import Emitter from '../../modules/listener/Emitter';
-import Screen from '../../modules/listener/Screen';
+import Screen, { Dimensions } from '../../modules/listener/Screen';
 import DrawerTablet from './DrawerTablet';
 import View from './View';
 import Theme from '../../modules/theme/Theme';
@@ -50,21 +50,21 @@ export default class DrawerAndroid extends React.Component<DrawerProps, State> {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    this.onDimensionsChange(await Screen.updateDimensions());
     this.onDimensionsChangeListener = Emitter.on(
       'onDimensionsChange',
       this.onDimensionsChange.bind(this)
     );
-    this.onDimensionsChange();
   }
 
   componentWillUnmount() {
     Emitter.off(this.onDimensionsChangeListener);
   }
 
-  onDimensionsChange() {
+  onDimensionsChange(dimensions: Dimensions) {
     this.setState({
-      width: Screen.getDimensions().width
+      width: dimensions.width
     });
   }
 

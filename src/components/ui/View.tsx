@@ -14,7 +14,7 @@ export interface ViewProps extends ViewProperties {
 
 export interface State {}
 
-export default class View extends React.Component<ViewProps, State> {
+export default class View extends React.PureComponent<ViewProps, State> {
   render() {
     let { style, ...props } = this.props;
 

@@ -9,7 +9,7 @@ export interface LinearGradientProps {
 
 export interface State {}
 
-export default class LinearGradientWeb extends React.Component<
+export default class LinearGradientWeb extends React.PureComponent<
   LinearGradientProps,
   State
 > {

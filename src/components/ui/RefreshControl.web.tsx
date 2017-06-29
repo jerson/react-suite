@@ -8,7 +8,7 @@ export interface RefreshControlProps {
 
 export interface State {}
 
-export default class RefreshControlWeb extends React.Component<
+export default class RefreshControlWeb extends React.PureComponent<
   RefreshControlProps,
   State
 > {

@@ -16,7 +16,7 @@ export interface DrawerHeaderProps extends ViewStyle {
 
 export interface State {}
 
-export default class DrawerHeader extends React.Component<
+export default class DrawerHeader extends React.PureComponent<
   DrawerHeaderProps,
   State
 > {

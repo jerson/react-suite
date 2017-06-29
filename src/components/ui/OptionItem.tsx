@@ -18,7 +18,7 @@ export interface OptionItemProps extends ButtonProps {
 
 export interface State {}
 
-export default class OptionItem extends React.Component<
+export default class OptionItem extends React.PureComponent<
   OptionItemProps,
   State
 > {

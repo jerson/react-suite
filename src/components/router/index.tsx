@@ -12,7 +12,7 @@ export interface Props {
 
 export interface State {}
 
-export class Router extends React.Component<Props, State> {
+export class Router extends React.PureComponent<Props, State> {
   render() {
     let { children, ...props } = this.props;
 

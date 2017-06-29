@@ -22,7 +22,7 @@ export interface HeaderProps {
 
 export interface State {}
 
-export default class Header extends React.Component<HeaderProps, State> {
+export default class Header extends React.PureComponent<HeaderProps, State> {
   render() {
     let {
       statusBarBackgroundColor,

@@ -3,6 +3,7 @@ import {
   LayoutChangeEvent,
   ListView as BaseListView,
   ListViewProperties,
+  MeasureOnSuccessCallback,
   NativeScrollEvent,
   NativeSyntheticEvent,
   ScrollViewStyle,
@@ -29,17 +30,29 @@ export interface ListViewProps extends ListViewProperties {
 
 export interface State {}
 
-export default class ListView extends React.Component<ListViewProps, State> {
+export default class ListView extends React.PureComponent<
+  ListViewProps,
+  State
+> {
   public static DataSource: any = BaseListView.DataSource;
+
+  refs: {
+    [string: string]: any;
+    list: BaseListView;
+  };
 
   refreshView() {
     this.forceUpdate();
   }
 
+  measure(callback: MeasureOnSuccessCallback) {
+    // this.refs.list.scrollResponderInputMeasureAndScrollToKeyboard(callback);
+  }
+
   render() {
     let { style, ...props } = this.props;
 
-    return <BaseListView {...props} />;
+    return <BaseListView ref='list' {...props} />;
   }
 }
 

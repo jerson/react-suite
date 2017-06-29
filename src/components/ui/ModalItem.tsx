@@ -50,7 +50,10 @@ export interface State {
   itemHeight: number;
 }
 
-export default class ModalItem extends React.Component<ModalItemProps, State> {
+export default class ModalItem extends React.PureComponent<
+  ModalItemProps,
+  State
+> {
   state = {
     top: new Animated.Value(-100),
     fade: new Animated.Value(0),

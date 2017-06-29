@@ -11,7 +11,7 @@ export interface TitleProps extends TextProps {
 
 export interface State {}
 
-export default class Title extends React.Component<TitleProps, State> {
+export default class Title extends React.PureComponent<TitleProps, State> {
   render() {
     let { style, center, size, ...props } = this.props;
     let fontSize = typeof size === 'number' ? size : 18;

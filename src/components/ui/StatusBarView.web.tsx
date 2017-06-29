@@ -9,7 +9,7 @@ export interface StatusBarViewProps extends StatusBarProperties {
 
 export interface State {}
 
-export default class StatusBarViewWeb extends React.Component<
+export default class StatusBarViewWeb extends React.PureComponent<
   StatusBarViewProps,
   State
 > {

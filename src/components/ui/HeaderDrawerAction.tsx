@@ -14,7 +14,7 @@ export interface State {
   isMain: boolean;
 }
 
-export default class HeaderDrawerActiion extends React.Component<
+export default class HeaderDrawerActiion extends React.PureComponent<
   HeaderDrawerActionProps,
   State
 > {

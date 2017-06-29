@@ -13,7 +13,7 @@ export interface TextProps extends TextProperties {
 
 export interface State {}
 
-export default class Text extends React.Component<TextProps, State> {
+export default class Text extends React.PureComponent<TextProps, State> {
   render() {
     let { style, ...props } = this.props;
 

@@ -31,7 +31,7 @@ export interface IconProps {
 
 export interface State {}
 
-export default class Icon extends React.Component<IconProps, State> {
+export default class Icon extends React.PureComponent<IconProps, State> {
   render() {
     let { type, name, ...props } = this.props;
     let newName = name.replace(/_/g, '-');

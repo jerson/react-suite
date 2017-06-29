@@ -15,7 +15,7 @@ export interface State {
   modals: BaseModal[];
 }
 
-export default class ModalCenter extends React.Component<
+export default class ModalCenter extends React.PureComponent<
   ModalCenterProps,
   State
 > {

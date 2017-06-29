@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, View, ViewStyle } from 'react-native';
 import Icon from './Icon';
 import Touchable from './Touchable';
 import Emitter from '../../modules/listener/Emitter';
-import Screen from '../../modules/listener/Screen';
+import Screen, { Dimensions } from '../../modules/listener/Screen';
 import { _ } from '../../modules/i18n/Translator';
 
 export interface FilterProps {
@@ -19,7 +19,7 @@ export interface State {
   inputWidth: number;
 }
 
-export default class Filter extends React.Component<FilterProps, State> {
+export default class Filter extends React.PureComponent<FilterProps, State> {
   state = {
     text: '',
     inputWidth: Screen.getDimensions().width
@@ -31,7 +31,7 @@ export default class Filter extends React.Component<FilterProps, State> {
   };
 
   private changeListener: any;
-  private orientationListener: any;
+  private onDimensionsChangeListener: any;
 
   onChange(text: string = '') {
     text = text.trim();
@@ -74,18 +74,17 @@ export default class Filter extends React.Component<FilterProps, State> {
     this.refs.input.focus();
   }
 
-  onDimensionsChange() {
-    let inputWidth =
-      Screen.getDimensions().width - (this.props.filterMargin || 0) * 2;
+  onDimensionsChange(dimensions: Dimensions) {
+    let inputWidth = dimensions.width - (this.props.filterMargin || 0) * 2;
     this.setState({ inputWidth });
   }
 
-  componentDidMount() {
-    this.orientationListener = Emitter.on(
+  async componentDidMount() {
+    this.onDimensionsChange(await Screen.updateDimensions());
+    this.onDimensionsChangeListener = Emitter.on(
       'onDimensionsChange',
       this.onDimensionsChange.bind(this)
     );
-    this.onDimensionsChange();
   }
 
   componentWillUnmount() {

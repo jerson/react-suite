@@ -81,10 +81,11 @@ export default class Screen {
   private static didUpdateDimensions(update: Dimensions) {
     Log.log('[SCREEN]', 'didUpdateDimensions', update);
     let dimension = this.getScreenDimensions();
+    //FIXME
     //if (this.dimensions !== dimension) {
     this.dimensions = dimension;
     Emitter.emit('onDimensionsChange', this.dimensions);
-    //this.updateOrientation();
+    this.updateOrientation();
     //}
   }
 

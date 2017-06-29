@@ -24,7 +24,7 @@ export interface State {
   isVisible: boolean;
 }
 
-export default class AlertMessage extends React.Component<
+export default class AlertMessage extends React.PureComponent<
   AlertMessageProps,
   State
 > {

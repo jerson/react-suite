@@ -13,7 +13,7 @@ export interface SliderProps {
 
 export interface State {}
 
-export default class Slider extends React.Component<SliderProps, State> {
+export default class Slider extends React.PureComponent<SliderProps, State> {
   render() {
     let {
       style,

@@ -12,7 +12,7 @@ export interface ImageProps extends ImageProperties {
 
 export interface State {}
 
-export default class Image extends React.Component<ImageProps, State> {
+export default class Image extends React.PureComponent<ImageProps, State> {
   render() {
     let { style, ...props } = this.props;
 

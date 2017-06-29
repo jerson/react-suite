@@ -2,7 +2,7 @@ import * as React from 'react';
 import ListView, { ListViewProps } from './ListView';
 import View from './View';
 import Emitter from '../../modules/listener/Emitter';
-import Screen from '../../modules/listener/Screen';
+import Screen, { Dimensions } from '../../modules/listener/Screen';
 import { LayoutChangeEvent, StyleSheet, ViewStyle } from 'react-native';
 import Log from '../../modules/logger/Log';
 
@@ -39,35 +39,36 @@ export default class FlexibleGrid extends React.Component<
 
   private onDimensionsChangeListener: string;
 
-  onDimensionsChange() {
-    let { width } = Screen.getDimensions();
+  onDimensionsChange(dimensions: Dimensions) {
+    let { width } = dimensions;
     let { itemWidth, itemMargin } = this.props;
+    let { containerWidth } = this.state;
+    containerWidth = containerWidth || width;
 
-    let contentWidth = width;
-    if (this.state.containerWidth) {
-      contentWidth = this.state.containerWidth;
-    }
-
-    let cols = Math.floor(contentWidth / itemWidth);
+    let cols = Math.floor(containerWidth / itemWidth);
     cols = cols < 1 ? 1 : cols;
     itemMargin = itemMargin || 0;
 
-    let windowWidth = contentWidth - itemMargin * ((cols + 1) * 2) - 1;
+    let windowWidth = containerWidth - itemMargin * ((cols + 1) * 2) - 1;
     itemWidth = windowWidth / cols;
 
     this.setState({ itemWidth }, () => {
       this.refs.list && this.refs.list.refreshView();
     });
 
-    Log.info(contentWidth, itemWidth, itemMargin);
+    Log.info(width, containerWidth, itemWidth, itemMargin);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    //this.refs.list.measure(async (ox, oy, width, height, px, py) => {
+    //    Log.warn('measure',ox, oy, width, height, px, py)
+    //});
+
+    this.onDimensionsChange(await Screen.updateDimensions());
     this.onDimensionsChangeListener = Emitter.on(
       'onDimensionsChange',
       this.onDimensionsChange.bind(this)
     );
-    this.onDimensionsChange();
   }
 
   componentWillUnmount() {

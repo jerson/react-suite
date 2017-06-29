@@ -20,7 +20,7 @@ export interface LabelProps {
 
 export interface State {}
 
-export default class Label extends React.Component<LabelProps, State> {
+export default class Label extends React.PureComponent<LabelProps, State> {
   render() {
     let {
       children,
@@ -152,19 +152,19 @@ const styles = StyleSheet.create({
     paddingRight: 8
   } as ViewStyle,
   containerPrimary: {
-    backgroundColor: Theme.vars.labelPrimaryBackgroundColor,
+    backgroundColor: Theme.vars.labelPrimaryBackgroundColor
   } as ViewStyle,
   containerDanger: {
-    backgroundColor: Theme.vars.labelDangerBackgroundColor,
+    backgroundColor: Theme.vars.labelDangerBackgroundColor
   } as ViewStyle,
   containerWarning: {
-    backgroundColor: Theme.vars.labelWarningBackgroundColor,
+    backgroundColor: Theme.vars.labelWarningBackgroundColor
   } as ViewStyle,
   containerInfo: {
-    backgroundColor: Theme.vars.labelInfoBackgroundColor,
+    backgroundColor: Theme.vars.labelInfoBackgroundColor
   } as ViewStyle,
   containerSuccess: {
-    backgroundColor: Theme.vars.labelSuccessBackgroundColor,
+    backgroundColor: Theme.vars.labelSuccessBackgroundColor
   } as ViewStyle,
   title: {
     color: Theme.vars.labelDefaultTextColor,

@@ -17,7 +17,7 @@ export interface DrawerFooterProps extends ViewStyle {
 
 export interface State {}
 
-export default class DrawerFooter extends React.Component<
+export default class DrawerFooter extends React.PureComponent<
   DrawerFooterProps,
   State
 > {
