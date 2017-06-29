@@ -53,6 +53,7 @@ export default class ModalCenter extends React.Component<ModalCenterProps,
             title: title || _('Are you sure?'),
             actions: [
                 {
+                    type: 'primary',
                     title: actionConfirm || _('Yes'),
                     onPress: () => {
                         if (typeof onSuccess === 'function') {

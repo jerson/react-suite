@@ -1,6 +1,6 @@
 {
     "name": "react-suite",
-    "version": "0.0.140-dev",
+    "version": "0.1.0",
     "types": "build/index.d.ts",
     "main": "build/index.js",
     "license": "Apache-2.0",

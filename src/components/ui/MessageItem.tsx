@@ -27,7 +27,7 @@ export interface State {
   itemHeight: number;
 }
 
-export default class MessageItem extends React.Component<
+export default class MessageItem extends React.PureComponent<
   MessageItemProps,
   State
 > {
