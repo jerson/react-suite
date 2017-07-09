@@ -61,12 +61,12 @@ export default class Button extends React.Component<ButtonProps, State> {
         sizeTitle = 11;
         break;
       case 'medium':
-        sizeContainer = 20;
+        sizeContainer = 12;
         sizeIcon = 18;
         sizeTitle = 16;
         break;
       case 'large':
-        sizeContainer = 20;
+        sizeContainer = 15;
         sizeIcon = 22;
         sizeTitle = 20;
         break;
