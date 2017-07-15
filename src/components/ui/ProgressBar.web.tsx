@@ -30,7 +30,7 @@ export default class ProgressBarWeb extends React.Component<
       ...props
     } = this.props;
 
-    let progress = (minimumValue || 1) / (maximumValue || 1);
+    let progress = ((value || 1) / (maximumValue || 1));
 
     return (
       <ProgressBarBase
