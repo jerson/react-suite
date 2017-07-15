@@ -5,6 +5,7 @@ import Default from './themes/Default';
 import Darker from './themes/Darker';
 import Demo from './themes/Demo';
 import { ThemeVars } from './ThemeBuilder';
+import ThemeStyleSheet from './ThemeStyleSheet';
 
 export interface UserSettings {
   themes: Themes;
@@ -37,12 +38,18 @@ export default class Theme {
       this.settings = Object.assign({}, this.settings, settings);
     }
 
+    ThemeStyleSheet.init();
+
     try {
       let theme = await this.getTheme();
       this.setTheme(theme);
     } catch (e) {
       Log.debug('[THEME]', e);
     }
+  }
+
+  static destroy() {
+    ThemeStyleSheet.destroy();
   }
 
   static setTheme(theme: string): void {

@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { Platform, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { Platform, TextStyle, ViewStyle } from 'react-native';
 import View from './View';
 import Text from './Text';
 import HeaderAction, { HeaderActionProps } from './HeaderAction';
 import StatusBarView from './StatusBarView';
 import HeaderDrawerAction from './HeaderDrawerAction';
 import Theme from '../../modules/theme/Theme';
+import { ThemeVars } from '../../modules/theme/ThemeBuilder';
+import ThemeStyleSheet from '../../modules/theme/ThemeStyleSheet';
 
 const PropTypes = require('prop-types');
 
@@ -95,13 +97,13 @@ export default class Header extends React.Component<HeaderProps, State> {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = ThemeStyleSheet.create((theme: ThemeVars) => ({
   buttonMenu: {
     padding: 10,
     paddingLeft: 15
   } as ViewStyle,
   icon: {
-    color: Theme.vars.headerIconColor
+    color: theme.headerIconColor
   } as TextStyle,
   options: {
     flexDirection: 'row'
@@ -116,7 +118,7 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   title: {
     fontSize: 16,
-    color: Theme.vars.headerTextColor
+    color: theme.headerTextColor
   } as TextStyle,
   center: {
     alignItems: 'flex-start',
@@ -124,14 +126,14 @@ const styles = StyleSheet.create({
     flex: 1
   } as ViewStyle,
   container: {
-    backgroundColor: Theme.vars.headerBackgroundColor,
+    backgroundColor: theme.headerBackgroundColor,
     //position: Platform.OS === 'web' ? 'fixed' : 'absolute',
     // position: 'absolute',
     zIndex: 1,
     flexDirection: 'column',
 
     elevation: 4,
-    shadowColor: Theme.vars.headerShadowColor,
+    shadowColor: theme.headerShadowColor,
     shadowOpacity: 0.1,
     shadowRadius: 2,
     shadowOffset: {
@@ -148,4 +150,4 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: 60
   } as ViewStyle
-});
+}));

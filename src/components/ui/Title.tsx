@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { StyleSheet, Text as TextBase, TextStyle } from 'react-native';
+import { Text as TextBase, TextStyle } from 'react-native';
 import { TextProps } from './Text';
 import Theme from '../../modules/theme/Theme';
+import ThemeStyleSheet from '../../modules/theme/ThemeStyleSheet';
+import { ThemeVars } from '../../modules/theme/ThemeBuilder';
 
 export interface TitleProps extends TextProps {
   style?: TextStyle;
@@ -42,13 +44,13 @@ export default class Title extends React.Component<TitleProps, State> {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = ThemeStyleSheet.create((theme: ThemeVars) => ({
   center: { textAlign: 'center' },
   container: {
-    color: Theme.vars.titleColor,
+    color: theme.titleColor,
     //fontFamily: 'Roboto,Helvetica,Arial',
     fontSize: 14,
     paddingTop: 4,
     paddingBottom: 4
   } as TextStyle
-});
+}));
