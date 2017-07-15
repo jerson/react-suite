@@ -124,10 +124,11 @@ export default class DrawerAndroid extends React.Component<DrawerProps, State> {
     let minWidthTabled = tabledModeMinWidth || 800;
 
     if (width > minWidthTabled && useTabledMode) {
+      const contentFinal = tabletContent ? tabletContent : content;
       return (
         <DrawerTablet
           leftStyle={{ width: maxWidth }}
-          content={tabletContent ? tabletContent : content}
+          content={<View style={styles.drawer}>{contentFinal}</View>}
           {...this.props}
         />
       );
@@ -140,7 +141,7 @@ export default class DrawerAndroid extends React.Component<DrawerProps, State> {
         onDrawerOpen={this.onDrawerOpen.bind(this)}
         onDrawerClose={this.onDrawerClose.bind(this)}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => content}
+        renderNavigationView={() => <View style={styles.drawer}>{content}</View>}
       >
         <View style={styles.content}>
           {children}
@@ -151,8 +152,12 @@ export default class DrawerAndroid extends React.Component<DrawerProps, State> {
 }
 
 const styles = StyleSheet.create({
-  content: {
-    flex: 1,
-    backgroundColor: Theme.vars.drawerContentBackgroundColor
-  } as ViewStyle
+    content: {
+        flex: 1,
+        backgroundColor: Theme.vars.drawerContentBackgroundColor
+    } as ViewStyle,
+    drawer: {
+        flex: 1,
+        backgroundColor: Theme.vars.drawerBackgroundColor
+    } as ViewStyle,
 });
