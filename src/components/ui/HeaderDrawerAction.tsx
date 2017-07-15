@@ -14,13 +14,13 @@ export interface State {
   isMain: boolean;
 }
 
-export default class HeaderDrawerActiion extends React.Component<
+export default class HeaderDrawerAction extends React.Component<
   HeaderDrawerActionProps,
   State
 > {
   static contextTypes = {
     router: PropTypes.object.isRequired,
-    drawer: PropTypes.object.isRequired
+    drawer: PropTypes.object
   };
 
   state = {

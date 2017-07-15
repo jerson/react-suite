@@ -9,8 +9,6 @@ import Theme from '../../modules/theme/Theme';
 import { ThemeVars } from '../../modules/theme/ThemeBuilder';
 import ThemeStyleSheet from '../../modules/theme/ThemeStyleSheet';
 
-const PropTypes = require('prop-types');
-
 export interface HeaderProps {
   left?: HeaderActionProps | JSX.Element;
   right?: HeaderActionProps | JSX.Element;
