@@ -15,6 +15,7 @@
         "format": "npm run prettier && npm run tslint",
         "prettier": "prettier --write --single-quote 'src/**/*.tsx'",
         "build": "npm run tslint && tsc",
+        "watch": "npm run tslint && tsc --watch",
         "pretest": "npm run build",
         "test": "jest",
         "tslint": "tslint --project tsconfig.json -r tslint.json -r ./node_modules/tslint-microsoft-contrib --fix || true",
