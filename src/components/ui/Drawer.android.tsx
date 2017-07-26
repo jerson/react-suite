@@ -141,7 +141,8 @@ export default class DrawerAndroid extends React.Component<DrawerProps, State> {
         onDrawerOpen={this.onDrawerOpen.bind(this)}
         onDrawerClose={this.onDrawerClose.bind(this)}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => <View style={styles.drawer}>{content}</View>}
+        renderNavigationView={() =>
+          <View style={styles.drawer}>{content}</View>}
       >
         <View style={styles.content}>
           {children}
@@ -152,12 +153,12 @@ export default class DrawerAndroid extends React.Component<DrawerProps, State> {
 }
 
 const styles = StyleSheet.create({
-    content: {
-        flex: 1,
-        backgroundColor: Theme.vars.drawerContentBackgroundColor
-    } as ViewStyle,
-    drawer: {
-        flex: 1,
-        backgroundColor: Theme.vars.drawerBackgroundColor
-    } as ViewStyle,
+  content: {
+    flex: 1,
+    backgroundColor: Theme.vars.drawerContentBackgroundColor
+  } as ViewStyle,
+  drawer: {
+    flex: 1,
+    backgroundColor: Theme.vars.drawerBackgroundColor
+  } as ViewStyle
 });
