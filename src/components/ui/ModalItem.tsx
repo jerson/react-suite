@@ -50,7 +50,7 @@ export interface State {
   itemHeight: number;
 }
 
-export default class ModalItem extends React.PureComponent<
+export default class ModalItem extends React.Component<
   ModalItemProps,
   State
 > {

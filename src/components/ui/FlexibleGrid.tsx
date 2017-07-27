@@ -22,7 +22,7 @@ export interface FlexibleGridItemStyle {
   width: number;
 }
 
-export default class FlexibleGrid extends React.PureComponent<
+export default class FlexibleGrid extends React.Component<
   FlexibleGridProps,
   State
 > {

@@ -43,12 +43,8 @@ export default class Theme {
     } catch (e) {
       Log.debug('[THEME]', e);
     }
-    //ThemeStyleSheet.init();
   }
 
-  static destroy() {
-    //ThemeStyleSheet.destroy();
-  }
 
   static setTheme(theme: string): void {
     this.theme = theme;

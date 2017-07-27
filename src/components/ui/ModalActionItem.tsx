@@ -49,7 +49,7 @@ export type State = {
   isVisible: boolean;
 };
 
-export default class ModalActionItem extends React.PureComponent<
+export default class ModalActionItem extends React.Component<
   ModalActionItemProps,
   State
 > {
