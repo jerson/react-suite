@@ -27,6 +27,7 @@ export interface State {
 
 export default class DrawerAndroid extends BaseComponent<DrawerProps, State> {
     static childContextTypes = {
+        theme: PropTypes.string,
         drawer: PropTypes.object
     };
 
