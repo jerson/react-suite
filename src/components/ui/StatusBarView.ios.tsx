@@ -1,47 +1,45 @@
 import * as React from 'react';
-import {
-  StatusBar,
-  StatusBarProperties,
-  StyleSheet,
-  ViewStyle,
-  Platform
-} from 'react-native';
+import {StatusBar, StatusBarProperties, ViewStyle} from 'react-native';
 import View from './View';
-import Theme from '../../modules/theme/Theme';
+import BaseComponent from '../BaseComponent';
+import {ThemeVars} from '../../modules/theme/ThemeBuilder';
 
 export interface StatusBarViewProps extends StatusBarProperties {
-  backgroundColor?: string;
-  barStyle?: 'default' | 'light-content';
+    backgroundColor?: string;
+    barStyle?: 'default' | 'light-content';
 }
 
-export interface State {}
-
-export default class StatusBarViewIOS extends React.Component<
-  StatusBarViewProps,
-  State
-> {
-  render() {
-    let { backgroundColor, barStyle, ...props } = this.props;
-
-    let backgroundColorFinal =
-      backgroundColor || Theme.vars.statusBarViewBackgroundIOSColor;
-    let barStyleFinal = barStyle || 'default';
-    return (
-      <View
-        style={[styles.container, { backgroundColor: backgroundColorFinal }]}
-        {...props}
-      >
-        <StatusBar
-          backgroundColor={backgroundColorFinal}
-          barStyle={barStyleFinal}
-        />
-      </View>
-    );
-  }
+export interface State {
 }
 
-const styles = StyleSheet.create({
-  container: {
-    height: 20
-  } as ViewStyle
-});
+export default class StatusBarViewIOS extends BaseComponent<StatusBarViewProps,
+    State> {
+
+    render() {
+        let {backgroundColor, barStyle, ...props} = this.props;
+        const {styles, theme} = this;
+
+        let backgroundColorFinal =
+            backgroundColor || theme.statusBarViewBackgroundIOSColor;
+        let barStyleFinal = barStyle || 'default';
+        return (
+            <View
+                style={[styles.container, {backgroundColor: backgroundColorFinal}]}
+                {...props}
+            >
+                <StatusBar
+                    backgroundColor={backgroundColorFinal}
+                    barStyle={barStyleFinal}
+                />
+            </View>
+        );
+    }
+
+    loadStyles(theme: ThemeVars) {
+        return {
+            container: {
+                height: 20
+            } as ViewStyle
+        };
+    }
+}

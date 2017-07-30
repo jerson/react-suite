@@ -1,26 +1,31 @@
 import * as React from 'react';
 import View from './View';
 import Loading from './Loading';
+import BaseComponent from '../BaseComponent';
+import {ThemeVars} from '../../modules/theme/ThemeBuilder';
 
 export interface RefreshControlProps {
-  refreshing: boolean;
+    refreshing: boolean;
 }
 
-export interface State {}
+export interface State {
+}
 
-export default class RefreshControlWeb extends React.Component<
-  RefreshControlProps,
-  State
-> {
-  render() {
-    if (!this.props.refreshing) {
-      return null;
+export default class RefreshControlWeb extends BaseComponent<RefreshControlProps,
+    State> {
+    render() {
+        if (!this.props.refreshing) {
+            return null;
+        }
+
+        return (
+            <View>
+                <Loading size='small'/>
+            </View>
+        );
     }
 
-    return (
-      <View>
-        <Loading size='small' />
-      </View>
-    );
-  }
+    loadStyles(theme: ThemeVars) {
+        return {};
+    }
 }

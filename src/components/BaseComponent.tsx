@@ -6,11 +6,9 @@ import Theme from '../modules/theme/Theme';
 const PropTypes = require('prop-types');
 
 export type Style = ViewStyle | TextStyle | ImageStyle;
-
 export type NamedStyles<T> = { [P in keyof T]: Style };
 
-export type ThemeCallback<T> = (theme: ThemeVars) => T;
-
+// export type ThemeCallback<T> = (theme: ThemeVars) => T;
 
 abstract class BaseComponent<P, S> extends React.Component<P, S> {
 
