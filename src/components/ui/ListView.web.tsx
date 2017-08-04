@@ -109,4 +109,3 @@ export default class ListViewWeb extends BaseComponent<ListViewProps, State> {
         };
     }
 }
-
