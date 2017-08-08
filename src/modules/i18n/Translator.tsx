@@ -64,6 +64,9 @@ export default class Translator {
   }
 
   static translate(text: string, params: Params = {}): string {
+    if (!text) {
+      return '';
+    }
     let translated = text;
     if (this.settings.translations[this.locale]) {
       translated = this.settings.translations[this.locale][text];

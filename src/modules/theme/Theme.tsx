@@ -45,7 +45,6 @@ export default class Theme {
     }
   }
 
-
   static setTheme(theme: string): void {
     this.theme = theme;
     this.vars = { ...this.vars, ...this.settings.themes[this.theme] };
