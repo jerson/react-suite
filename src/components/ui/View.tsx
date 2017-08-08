@@ -1,27 +1,28 @@
 import * as React from 'react';
-import {
-  LayoutChangeEvent,
-  StyleSheet,
-  View as ViewBase,
-  ViewProperties,
-  ViewStyle
-} from 'react-native';
+import {LayoutChangeEvent, View as ViewBase, ViewProperties, ViewStyle} from 'react-native';
+import BaseComponent from '../BaseComponent';
+import {ThemeVars} from '../../modules/theme/ThemeBuilder';
 
 export interface ViewProps extends ViewProperties {
-  style?: ViewStyle;
-  onLayout?: (event: LayoutChangeEvent) => void;
+    style?: ViewStyle;
+    onLayout?: (event: LayoutChangeEvent) => void;
 }
 
-export interface State {}
-
-export default class View extends React.Component<ViewProps, State> {
-  render() {
-    let { style, ...props } = this.props;
-
-    return <ViewBase style={[styles.container, style]} {...props} />;
-  }
+export interface State {
 }
 
-const styles = StyleSheet.create({
-  container: {} as ViewStyle
-});
+export default class View extends BaseComponent<ViewProps, State> {
+
+    render() {
+        let {style, ...props} = this.props;
+        const {styles} = this;
+
+        return <ViewBase style={[styles.container, style]} {...props} />;
+    }
+
+    loadStyles(theme: ThemeVars) {
+        return {
+            container: {} as ViewStyle
+        };
+    }
+}

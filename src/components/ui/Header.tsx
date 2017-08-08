@@ -26,10 +26,6 @@ export interface State {
 
 export default class Header extends BaseComponent<HeaderProps, State> {
 
-    static contextTypes = {
-        theme: PropTypes.string,
-    };
-
     render() {
 
         let {

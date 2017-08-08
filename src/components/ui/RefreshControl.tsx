@@ -1,25 +1,32 @@
 import * as React from 'react';
-import { RefreshControl as RefreshControlBase } from 'react-native';
-import Theme from '../../modules/theme/Theme';
+import {RefreshControl as RefreshControlBase} from 'react-native';
+import BaseComponent from '../BaseComponent';
+import {ThemeVars} from '../../modules/theme/ThemeBuilder';
 
 export interface RefreshControlProps {
-  refreshing: boolean;
+    refreshing: boolean;
 }
 
-export interface State {}
+export interface State {
+}
 
-export default class RefreshControl extends React.Component<
-  RefreshControlProps,
-  State
-> {
-  render() {
-    return (
-      <RefreshControlBase
-        style={{ backgroundColor: 'transparent' }}
-        tintColor={Theme.vars.refreshControlTintColor}
-        colors={[Theme.vars.refreshControlColor]}
-        {...this.props}
-      />
-    );
-  }
+export default class RefreshControl extends BaseComponent<RefreshControlProps,
+    State> {
+    render() {
+        const {theme} = this;
+
+        return (
+            <RefreshControlBase
+                style={{backgroundColor: 'transparent'}}
+                tintColor={theme.refreshControlTintColor}
+                colors={[theme.refreshControlColor]}
+                {...this.props}
+            />
+        );
+
+    }
+
+    loadStyles(theme: ThemeVars) {
+        return {};
+    }
 }

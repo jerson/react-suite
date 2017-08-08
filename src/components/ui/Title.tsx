@@ -1,7 +1,8 @@
 import * as React from 'react';
-import {StyleSheet, Text as TextBase, TextStyle} from 'react-native';
+import {Text as TextBase, TextStyle} from 'react-native';
 import {TextProps} from './Text';
-import Theme from '../../modules/theme/Theme';
+import BaseComponent from '../BaseComponent';
+import {ThemeVars} from '../../modules/theme/ThemeBuilder';
 
 export interface TitleProps extends TextProps {
     style?: TextStyle;
@@ -12,9 +13,11 @@ export interface TitleProps extends TextProps {
 export interface State {
 }
 
-export default class Title extends React.Component<TitleProps, State> {
+export default class Title extends BaseComponent<TitleProps, State> {
+
     render() {
         let {style, center, size, ...props} = this.props;
+        const {styles} = this;
         let fontSize = typeof size === 'number' ? size : 18;
         if (typeof size === 'string') {
             switch (size) {
@@ -41,15 +44,18 @@ export default class Title extends React.Component<TitleProps, State> {
             />
         );
     }
-}
 
-const styles = StyleSheet.create({
-    center: {textAlign: 'center'},
-    container: {
-        color: Theme.vars.titleColor,
-        //fontFamily: 'Roboto,Helvetica,Arial',
-        fontSize: 14,
-        paddingTop: 4,
-        paddingBottom: 4
-    } as TextStyle
-});
+    loadStyles(theme: ThemeVars) {
+        return {
+            center: {textAlign: 'center'},
+            container: {
+                color: theme.titleColor,
+                //fontFamily: 'Roboto,Helvetica,Arial',
+                fontSize: 14,
+                paddingTop: 4,
+                paddingBottom: 4
+            } as TextStyle
+        };
+    }
+
+}
