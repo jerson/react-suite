@@ -48,7 +48,7 @@
     },
     "dependencies": {
         "pubsub-js": "^1.5.7",
-        "qs": "^6.4.0",
+        "qs": "^6.4.1",
         "simplestorage.js": "^0.2.1",
         "string-format": "^0.5.0",
         "tinycolor2": "^1.4.1"
